@@ -1,0 +1,125 @@
+export type ProjectSlug = "tripdito" | "torikong" | "ggparrot";
+
+export type PageTheme = "home" | ProjectSlug;
+
+export type BrandAssets = {
+  logo: string;
+  logoOnDark: string;
+  mark: string;
+};
+
+export type Project = {
+  slug: ProjectSlug;
+  name: string;
+  nameEn: string;
+  tagline: string;
+  summary: string;
+  href: `/${ProjectSlug}`;
+  liveUrl: string;
+  category: string;
+  accent: string;
+  secondary: string;
+  onAccent: string;
+  assets: BrandAssets;
+};
+
+export const projects: Project[] = [
+  {
+    slug: "tripdito",
+    name: "트립디토",
+    nameEn: "TripDito",
+    tagline: "이미지 한 장으로, 여행 쇼핑",
+    summary:
+      "이미지 한 장으로 해외여행 쇼핑리스트를 만들고, 현지 구매 동선을 잡아 줍니다.",
+    href: "/tripdito",
+    liveUrl: "https://trip-shopping.vercel.app/",
+    category: "여행 쇼핑",
+    accent: "#3182F6",
+    secondary: "#62CBFF",
+    onAccent: "#ffffff",
+    assets: {
+      logo: "/images/tripdito/logo.svg",
+      logoOnDark: "/images/tripdito/logo-white.svg",
+      mark: "/images/tripdito/mark.svg",
+    },
+  },
+  {
+    slug: "torikong",
+    name: "토리콩",
+    nameEn: "Torikong",
+    tagline: "우리 아이만의 특별한 이야기",
+    summary:
+      "유아 교육 이야기에 쓸 캐릭터를 만들고, 에피소드 속에서도 같은 얼굴로 만나게 합니다.",
+    href: "/torikong",
+    liveUrl: "https://2607-tale-nest.vercel.app/",
+    category: "에듀테크",
+    accent: "#FF6087",
+    secondary: "#FFBEC7",
+    onAccent: "#ffffff",
+    assets: {
+      logo: "/images/torikong/logo.svg",
+      logoOnDark: "/images/torikong/logo.svg",
+      mark: "/images/torikong/mark-bg.svg",
+    },
+  },
+  {
+    slug: "ggparrot",
+    name: "껄무새",
+    nameEn: "GGPARROT",
+    tagline: "코린이도 쉽게 시작하는 코인 매크로",
+    summary:
+      "전략을 만들고 과거 데이터로 돌려본 뒤, 실거래 없이 모의로 익힙니다.",
+    href: "/ggparrot",
+    liveUrl: "https://gg-parrot.vercel.app/",
+    category: "핀테크 교육",
+    accent: "#FCD535",
+    secondary: "#FFE57C",
+    onAccent: "#111111",
+    assets: {
+      logo: "/images/ggparrot/logo.svg",
+      logoOnDark: "/images/ggparrot/logo-white.svg",
+      mark: "/images/ggparrot/mark.svg",
+    },
+  },
+];
+
+export const heroPlanes = [
+  "rgba(255,255,255,0.42)",
+  "rgba(255,255,255,0.26)",
+  "rgba(255,255,255,0.14)",
+] as [string, string, string];
+
+export const heroPlanesOnLight = [
+  "rgba(255,255,255,0.48)",
+  "rgba(255,255,255,0.4)",
+  "rgba(255,255,255,0.36)",
+] as [string, string, string];
+
+export const heroPlanesHome = [
+  "rgba(255,255,255,0.56)",
+  "rgba(255,255,255,0.48)",
+  "rgba(255,255,255,0.44)",
+] as [string, string, string];
+
+export function brandGradient({
+  accent,
+  secondary,
+}: Pick<Project, "accent" | "secondary">) {
+  return `linear-gradient(125deg, ${secondary} 20%, ${accent} 80%)`;
+}
+
+export function getProject(slug: ProjectSlug) {
+  const project = projects.find((item) => item.slug === slug);
+  if (!project) {
+    throw new Error(`Unknown project: ${slug}`);
+  }
+  return project;
+}
+
+export function getAdjacentProjects(slug: ProjectSlug) {
+  const index = projects.findIndex((item) => item.slug === slug);
+  return {
+    prev: index > 0 ? projects[index - 1] : undefined,
+    next: index >= 0 && index < projects.length - 1 ? projects[index + 1] : undefined,
+  };
+}
