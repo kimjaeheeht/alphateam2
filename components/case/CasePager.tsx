@@ -16,7 +16,7 @@ export default function CasePager({ prev, next }: CasePagerProps) {
           className="flex min-h-44 flex-col justify-end px-8 py-10 transition-opacity hover:opacity-90"
           style={{ background: prev.accent, color: prev.onAccent }}
         >
-          <p className="text-[11px] tracking-[0.18em]">이전 서비스</p>
+          <p className="text-[11px]">이전 서비스</p>
           <p className="mt-3 text-2xl">{prev.name}</p>
         </Link>
       ) : (
@@ -28,7 +28,7 @@ export default function CasePager({ prev, next }: CasePagerProps) {
           className="flex min-h-44 flex-col justify-end px-8 py-10 text-right transition-opacity hover:opacity-90"
           style={{ background: next.accent, color: next.onAccent }}
         >
-          <p className="text-[11px] tracking-[0.18em]">다음 서비스</p>
+          <p className="text-[11px]">다음 서비스</p>
           <p className="mt-3 text-2xl">{next.name}</p>
         </Link>
       ) : (

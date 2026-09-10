@@ -1,5 +1,4 @@
 export const homeContent = {
-  kicker: "ALPHA TEAM 2ND — SHOWCASE",
   manifesto: [
     {
       id: "m1",
@@ -36,7 +35,6 @@ export const tripditoContent = {
     { label: "출처", value: "생활 속 불편" },
     { label: "유형", value: "여행 쇼핑" },
   ],
-  tags: ["여행", "소비", "생활 속 불편"],
   backgroundTitle: "기획 배경",
   backgroundLead: "캡처만 해 두고, 현지에서는 찾지 못해 포기합니다.",
   backgroundBody: [
@@ -87,7 +85,6 @@ export const torikongContent = {
     { label: "출처", value: "생활 속 불편" },
     { label: "유형", value: "에듀테크" },
   ],
-  tags: ["교육", "콘텐츠", "생활 속 불편"],
   backgroundTitle: "기획 배경",
   backgroundLead: "이야기마다 주인공 얼굴이 바뀌면, 아이는 세계가 바뀐 줄 압니다.",
   backgroundBody: [
@@ -134,7 +131,6 @@ export const ggparrotContent = {
     { label: "출처", value: "생활 속 불편" },
     { label: "유형", value: "핀테크 교육" },
   ],
-  tags: ["시도", "교육", "콘텐츠", "생활 속 불편"],
   disclaimer: "웹 결과는 모의 계산이며 투자 조언이 아닙니다.",
   backgroundTitle: "기획 배경",
   backgroundLead: "관심은 있는데, 첫 클릭이 너무 비쌌습니다.",

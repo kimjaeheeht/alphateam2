@@ -40,7 +40,7 @@ export default function CaseFeature({
         ) : null}
         <h2
           className={cn(
-            "text-2xl font-medium tracking-tight sm:text-4xl",
+            "text-2xl font-medium sm:text-4xl",
             kicker && "mt-3",
           )}
         >
@@ -49,7 +49,7 @@ export default function CaseFeature({
         {paragraphs.length > 0 ? (
           <div
             className={cn(
-              "mt-6 space-y-4 text-[15px] leading-8 text-[#666]",
+              "mt-6 space-y-4 text-[15px] text-[#666]",
               centered && "mx-auto max-w-xl",
             )}
           >

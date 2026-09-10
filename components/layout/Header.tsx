@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { projects } from "@/lib/projects";
+import Container from "@/components/layout/Container";
 
 const navItems = [
   { href: "/", label: "홈" },
@@ -26,10 +27,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white/90 text-[#111] backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+      <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
-          className="shrink-0 text-sm tracking-tight"
+          className="shrink-0 text-sm"
           onClick={() => setOpen(false)}
         >
           알파팀 2기
@@ -59,7 +60,7 @@ export default function Header() {
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
           <span className="sr-only">메뉴</span>
         </button>
-      </div>
+      </Container>
       {open ? (
         <nav
           id="mobile-nav"

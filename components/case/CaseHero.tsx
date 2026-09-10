@@ -8,6 +8,7 @@ type CaseHeroProps = {
   kicker: string;
   background: string;
   planes: [string, string, string];
+  color?: string;
   className?: string;
 };
 
@@ -16,15 +17,16 @@ export default function CaseHero({
   kicker,
   background,
   planes,
+  color = "#ffffff",
   className,
 }: CaseHeroProps) {
   return (
     <section
       className={cn(
-        "relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center overflow-hidden text-foreground",
+        "relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center overflow-hidden",
         className,
       )}
-      style={{ background }}
+      style={{ background, color }}
     >
       <ParallaxPlanes layers={planes} />
       <p className="relative z-10 mb-5 tracking-[0.18em]">

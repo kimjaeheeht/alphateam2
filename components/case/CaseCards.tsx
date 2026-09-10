@@ -20,7 +20,7 @@ export default function CaseCards({ color, items }: CaseCardsProps) {
             className="rounded-2xl bg-white px-7 py-10 text-center text-[#111]"
           >
             <h3 className="text-xl font-medium">{item.title}</h3>
-            <p className="mt-4 text-sm leading-7 text-[#666]">{item.body}</p>
+            <p className="mt-4 text-sm text-[#666]">{item.body}</p>
           </li>
         ))}
       </ul>

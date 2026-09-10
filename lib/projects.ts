@@ -101,13 +101,6 @@ export const heroPlanesHome = [
   "rgba(255,255,255,0.44)",
 ] as [string, string, string];
 
-export function brandGradient({
-  accent,
-  secondary,
-}: Pick<Project, "accent" | "secondary">) {
-  return `linear-gradient(125deg, ${secondary} 20%, ${accent} 80%)`;
-}
-
 export function getProject(slug: ProjectSlug) {
   const project = projects.find((item) => item.slug === slug);
   if (!project) {

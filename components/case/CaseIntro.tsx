@@ -35,14 +35,14 @@ export default function CaseIntro({
         <dl className="mt-12 grid grid-cols-3 gap-6">
           {meta.map((item) => (
             <div key={item.label}>
-              <dt className="border-b border-black pb-2 text-[11px] font-medium tracking-[0.14em]">
+              <dt className="border-b border-black pb-2 text-[11px] font-medium">
                 {item.label}
               </dt>
-              <dd className="mt-3 text-sm leading-6">{item.value}</dd>
+              <dd className="mt-3 text-sm">{item.value}</dd>
             </div>
           ))}
         </dl>
-        <div className="mt-12 space-y-5 text-[15px] leading-8 text-[#555]">
+        <div className="mt-12 space-y-5 text-[15px] text-[#555]">
           {body.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

@@ -4,22 +4,22 @@ import CaseFeature from "@/components/case/CaseFeature";
 import CaseHero from "@/components/case/CaseHero";
 import CaseIntro from "@/components/case/CaseIntro";
 import CasePager from "@/components/case/CasePager";
-import CaseTags from "@/components/case/CaseTags";
 import CaseVisual from "@/components/case/CaseVisual";
 import HeroPlanes from "@/components/case/HeroPlanes";
 import { ggparrotContent } from "@/lib/content";
-import { brandGradient, getAdjacentProjects, getProject, heroPlanesOnLight } from "@/lib/projects";
+import { getAdjacentProjects, getProject, heroPlanesOnLight } from "@/lib/projects";
 
 export default function GgparrotPage() {
   const project = getProject("ggparrot");
   const adjacent = getAdjacentProjects(project.slug);
 
   return (
-    <div className="bg-white text-[#111]">
+    <>
       <CaseHero
         wordmark="GGPARROT"
         kicker={ggparrotContent.heroKicker}
-        background={brandGradient(project)}
+        background={project.accent}
+        color={project.onAccent}
         planes={heroPlanesOnLight}
       />
       <CaseIntro
@@ -65,12 +65,11 @@ export default function GgparrotPage() {
         <HeroPlanes
           layers={heroPlanesOnLight}
         />
-        <p className="relative z-10 pl-[0.38em] text-[clamp(1.5rem,5vw,3rem)] font-bold tracking-[0.38em]">
+        <p className="relative z-10 text-[clamp(1.5rem,5vw,3rem)] font-bold">
           GGPARROT
         </p>
       </section>
-      <CaseTags tags={ggparrotContent.tags} />
       <CasePager prev={adjacent.prev} next={adjacent.next} />
-    </div>
+    </>
   );
 }

@@ -17,8 +17,8 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
     <div
       className={
         home
-          ? "flex h-dvh flex-col overflow-hidden bg-white text-[#111]"
-          : "flex min-h-dvh flex-col bg-white text-[#111]"
+          ? "flex h-dvh flex-col overflow-hidden"
+          : "flex min-h-dvh flex-col"
       }
     >
       <Header />

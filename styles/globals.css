@@ -51,7 +51,9 @@ body {
 @supports (height: 100cqh) {
   .home-snap-section,
   .home-snap-planes,
-  .home-hero-pin {
+  .home-hero-pin,
+  .home-slide-rail,
+  .home-slide {
     height: 100cqh;
   }
 }
@@ -73,6 +75,7 @@ body {
 .home-slide-rail {
   display: flex;
   height: 100%;
+  min-height: 100%;
   overflow-x: auto;
   overscroll-behavior: auto;
   scroll-snap-type: x mandatory;
@@ -113,8 +116,12 @@ body {
 
 .home-slide {
   box-sizing: border-box;
+  display: flex;
   flex: 0 0 100%;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
+  min-height: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }

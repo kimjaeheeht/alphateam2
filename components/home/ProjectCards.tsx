@@ -11,12 +11,12 @@ export default function ProjectCards() {
   return (
     <section
       data-home-scene="projects"
-      className="home-snap-section relative flex flex-col justify-center bg-white text-[#111]"
+      className="home-snap-section relative flex flex-col justify-center bg-background"
     >
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm text-[var(--muted)]">{homeContent.projectsTitle}</p>
-          <h2 className="mt-3 text-2xl font-medium tracking-tight sm:text-4xl">
+          <h2 className="mt-3 text-2xl font-medium sm:text-4xl">
             {homeContent.projectsBody}
           </h2>
         </div>
@@ -51,13 +51,13 @@ export default function ProjectCards() {
                   />
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col py-2 pr-3 md:px-6 md:py-6 md:pr-6">
-                  <p className="text-[11px] tracking-[0.16em] text-neutral-500">
+                  <p className="text-[11px] text-neutral-500">
                     {project.category}
                   </p>
                   <h3 className="mt-1 text-base font-medium text-neutral-900 md:mt-3 md:text-lg">
                     {project.name}
                   </h3>
-                  <p className="mt-1 hidden text-sm leading-7 text-neutral-500 md:block">
+                  <p className="mt-1 hidden text-sm text-neutral-500 md:block">
                     {project.tagline}
                   </p>
                   <p className="mt-2 flex items-center gap-1 text-sm text-neutral-900 md:mt-6">
