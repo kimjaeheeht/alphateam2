@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import Logo from "@/components/brand/Logo";
 import Container from "@/components/layout/Container";
-import PhoneFrame from "@/components/service/PhoneFrame";
+import HeroScreen from "@/components/service/HeroScreen";
 import ServiceCards from "@/components/service/ServiceCards";
 import ServiceHeading from "@/components/service/ServiceHeading";
 import Button from "@/components/ui/Button";
@@ -19,6 +19,7 @@ export default function ServicePage({
 }: ServicePageProps) {
   const serviceId = `${project.slug}-service`;
   const hasScreen = Boolean(content.hero.screen);
+  const desktopScreen = content.hero.device === "desktop";
   // onAccent가 흰색이 아니면 노란 껄무새처럼 밝은 포인트 컬러로 보고 글자·버튼을 검게 둡니다.
   const lightAccent = project.onAccent.toLowerCase() !== "#ffffff";
 
@@ -44,8 +45,10 @@ export default function ServicePage({
 
         <Container
           className={cn(
-            "relative flex min-h-[calc(100svh-4rem)] flex-col gap-10 pt-16 lg:min-h-[min(46rem,calc(100svh-4rem))] lg:grid lg:grid-cols-2 lg:gap-12 lg:pt-24",
+            "relative flex min-h-[calc(100svh-4rem)] flex-col gap-10 pt-16 lg:min-h-[min(46rem,calc(100svh-4rem))] lg:grid lg:gap-12 lg:pt-24",
             !hasScreen && "lg:grid-cols-1",
+            hasScreen && desktopScreen && "lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]",
+            hasScreen && !desktopScreen && "lg:grid-cols-2",
           )}
         >
           {/* 텍스트 영역 */}
@@ -77,11 +80,24 @@ export default function ServicePage({
 
           {/* 화면 이미지 영역 */}
           {hasScreen ? (
-            <div className="mt-auto flex justify-center lg:mt-0 lg:items-end lg:justify-end">
-              <PhoneFrame
+            <div
+              className={cn(
+                "mt-auto flex",
+                desktopScreen
+                  ? "justify-stretch lg:mt-0 lg:items-end"
+                  : "justify-center lg:mt-0 lg:items-end lg:justify-end",
+              )}
+            >
+              <HeroScreen
                 src={content.hero.screen ?? ""}
+                srcSm={content.hero.screenSm}
                 alt={`${project.name} 서비스 화면`}
-                className="w-[min(200px,58vw)] translate-y-8 sm:w-[240px] sm:translate-y-10 lg:w-[320px] lg:translate-y-12 xl:w-[360px]"
+                device={desktopScreen ? "desktop" : "phone"}
+                className={
+                  desktopScreen
+                    ? "w-full translate-y-6 sm:translate-y-8 lg:translate-y-10"
+                    : "w-[min(200px,58vw)] translate-y-8 sm:w-[240px] sm:translate-y-10 lg:w-[320px] lg:translate-y-12 xl:w-[360px]"
+                }
                 priority
               />
             </div>

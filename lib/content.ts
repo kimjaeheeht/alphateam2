@@ -145,13 +145,16 @@ export const tripditoContent: ServicePageContent = {
 const TEXT = "text";
 
 /** 토리콩·껄무새 기획용 플레이스홀더. 섹션명·CTA만 채우고 본문은 text입니다. */
-function placeholderContent(): ServicePageContent {
+function placeholderContent(
+  hero?: Pick<ServicePageContent["hero"], "screen" | "screenSm" | "device">,
+): ServicePageContent {
   return {
     hero: {
       title: TEXT,
       body: TEXT,
       cta: serviceCtas.primary,
       ctaSecondary: serviceCtas.secondary,
+      ...hero,
     },
     background: {
       name: serviceSectionNames.background,
@@ -201,8 +204,16 @@ function placeholderContent(): ServicePageContent {
   };
 }
 
-export const torikongContent = placeholderContent();
-export const ggparrotContent = placeholderContent();
+export const torikongContent = placeholderContent({
+  screen: "/images/torikong/service-01.png",
+  device: "desktop",
+});
+
+export const ggparrotContent = placeholderContent({
+  screen: "/images/ggparrot/service-01.png",
+  screenSm: "/images/ggparrot/service-01-sm.png",
+  device: "desktop",
+});
 
 /** slug → 쇼케이스 카피 */
 export const serviceContent: Record<ProjectSlug, ServicePageContent> = {

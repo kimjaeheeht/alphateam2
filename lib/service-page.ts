@@ -26,6 +26,9 @@ export type ServicePageContent = {
     title: string;
     body: string;
     screen?: string;
+    /** 쇼케이스 모바일 구간에서 쓰는 PC 캡처. 비율이 다를 때 넣습니다. */
+    screenSm?: string;
+    device?: "phone" | "desktop";
     cta: string;
     ctaSecondary: string;
   };
