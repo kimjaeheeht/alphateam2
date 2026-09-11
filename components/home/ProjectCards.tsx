@@ -9,10 +9,7 @@ import { heroPlanes, heroPlanesOnLight, projects } from "@/lib/projects";
 
 export default function ProjectCards() {
   return (
-    <section
-      data-home-scene="projects"
-      className="home-snap-section relative flex flex-col justify-center bg-background"
-    >
+    <section className="bg-background py-20 sm:py-28">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm text-muted">{homeContent.projectsTitle}</p>

@@ -32,7 +32,7 @@ export default function Button({
     <a
       href={href}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full border px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium",
+        "inline-flex items-center justify-center gap-2 rounded-full border px-4 sm:px-6 py-3 text-sm sm:text-base font-medium",
         variants[variant],
         className,
       )}

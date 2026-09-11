@@ -50,11 +50,11 @@ export default function ServicePage({
         >
           {/* 텍스트 영역 */}
           <div className="relative z-10 flex flex-col justify-center lg:pb-24">
-            <Logo project={project} onDark={!lightAccent} className="h-10" priority />
+            <Logo project={project} onDark={!lightAccent} className="h-12" priority />
             <h1 className="mt-6 whitespace-pre-line text-[clamp(2rem,5vw,4rem)] font-bold">
               {content.hero.title}
             </h1>
-            <p className="mt-6 max-w-xl whitespace-pre-line text-sm text-current/80 sm:text-lg">
+            <p className="mt-6 max-w-xl whitespace-pre-line text-current/80 font-medium sm:text-lg">
               {content.hero.body}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">

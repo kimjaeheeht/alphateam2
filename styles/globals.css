@@ -39,65 +39,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-.home-snap {
-  container-type: size;
-  height: 100%;
-  overflow-y: auto;
-  overscroll-behavior-y: contain;
-  scroll-snap-type: y mandatory;
-  scrollbar-width: none;
-  touch-action: pan-y;
-  transition: background-color 0.7s ease-out, color 0.7s ease-out;
-}
-
-.home-snap::-webkit-scrollbar {
-  display: none;
-}
-
-.home-snap-section,
-.home-snap-planes,
-.home-hero-pin {
-  height: calc(100svh - 4rem);
-}
-
-@supports (height: 100cqh) {
-  .home-snap-section,
-  .home-snap-planes,
-  .home-hero-pin,
-  .home-slide-rail,
-  .home-slide {
-    height: 100cqh;
-  }
-}
-
-.home-snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.home-hero-pin {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.home-slide-rail {
-  display: flex;
-  height: 100%;
-  min-height: 100%;
-  overflow-x: auto;
-  overscroll-behavior: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.home-slide-rail::-webkit-scrollbar {
-  display: none;
-}
-
 .hero-planes-stack {
   --plane-shift: 20%;
   position: absolute;
@@ -124,29 +65,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-plane-c {
   transform: translate(var(--plane-shift), var(--plane-shift));
-}
-
-.home-slide {
-  box-sizing: border-box;
-  display: flex;
-  flex: 0 0 100%;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  min-height: 100%;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-snap {
-    scroll-snap-type: none;
-    transition: none;
-  }
-
-  .home-slide-rail {
-    scroll-snap-type: none;
-  }
 }
 
 [data-theme="home"] {
