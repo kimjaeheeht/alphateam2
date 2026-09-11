@@ -220,7 +220,7 @@ export default function ServicePage({
           {next ? (
             <Link href={next.href} className="inline-flex items-center gap-2 text-lg hover:text-accent">
               {next.name}
-              <MoveUpRight className="size-4" aria-hidden="true" />
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           ) : (
             <span />
