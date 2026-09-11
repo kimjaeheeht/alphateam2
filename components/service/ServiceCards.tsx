@@ -5,6 +5,7 @@ import type { ServiceItem } from "@/lib/service-page";
 type ServiceCardsProps = {
   items: ServiceItem[];
   columns?: string;
+  /** story: 기획 배경, feature: 서비스 소개, highlight: 핵심 기능 */
   variant?: "story" | "feature" | "highlight";
   align?: "left" | "center";
   accentLast?: boolean;
@@ -12,6 +13,7 @@ type ServiceCardsProps = {
   onAccent?: string;
 };
 
+/** 섹션 카드 목록. variant로 배경·아이콘 박스 스타일을 나눕니다. */
 export default function ServiceCards({
   items,
   columns = "md:grid-cols-3",
@@ -21,25 +23,28 @@ export default function ServiceCards({
   accent,
   onAccent = "#ffffff",
 }: ServiceCardsProps) {
+  // 포인트 컬러가 밝으면 강조 카드 글자를 검게 둡니다.
   const lightAccent = onAccent.toLowerCase() !== "#ffffff";
 
   return (
-    <ul className={cn("mt-16 grid gap-6", columns)}>
+    <ul className={cn("mt-10 sm:mt-16 grid gap-6", columns)}>
       {items.map((item, index) => {
         const featured = accentLast && index === items.length - 1;
+        const titleBesideIcon = variant === "highlight" && Boolean(item.title);
+
         return (
           <li
             key={`${item.title ?? item.body}-${index}`}
             className={cn(
-              "rounded-[1.75rem] px-8 py-10",
+              "rounded-3xl sm:rounded-4xl px-6 sm:px-8 py-7 sm:py-10",
               featured
                 ? lightAccent
-                  ? "text-[#111]"
+                  ? "text-foreground"
                   : "text-white"
                 : variant === "feature"
-                  ? "bg-[#eef0f3]"
+                  ? "bg-surface"
                   : variant === "highlight"
-                    ? "bg-white shadow-[0_12px_40px_rgba(17,17,17,0.08)]"
+                    ? "bg-white text-foreground shadow-[0_12px_40px_rgba(17,17,17,0.08)]"
                     : "bg-white",
               align === "center" && "text-center",
             )}
@@ -47,41 +52,44 @@ export default function ServiceCards({
           >
             <div
               className={cn(
-                "flex items-start gap-4",
+                "flex items-center gap-4",
                 item.step ? "justify-between" : "",
                 align === "center" && "justify-center",
               )}
             >
               <span
                 className={cn(
-                  "inline-flex size-11 items-center justify-center rounded-2xl",
+                  "inline-flex size-11 shrink-0 items-center justify-center rounded-2xl",
                   featured
                     ? lightAccent
-                      ? "bg-black/10 text-[#111]"
+                      ? "bg-black/10 text-foreground"
                       : "bg-white/20 text-white"
                     : variant === "feature"
-                      ? "bg-white text-[#111]"
-                      : "bg-[#eef0f3] text-[#111]",
+                      ? "bg-white text-foreground"
+                      : "bg-surface text-foreground",
                 )}
               >
                 <ServiceIcon name={item.icon} className="size-5" />
               </span>
+              {titleBesideIcon ? (
+                <h3 className="text-lg font-medium">{item.title}</h3>
+              ) : null}
               {item.step ? (
-                <span className="text-sm text-[#929292]">{item.step}</span>
+                <span className="text-sm text-muted">{item.step}</span>
               ) : null}
             </div>
-            {item.title ? (
-              <h3 className="mt-8 text-xl font-medium">{item.title}</h3>
+            {!titleBesideIcon && item.title ? (
+              <h3 className="mt-6 text-lg font-medium">{item.title}</h3>
             ) : null}
             <p
               className={cn(
-                item.title ? "mt-3" : "mt-8",
-                "text-[15px]",
+                item.title ? "mt-4" : "mt-6",
+                "text-sm",
                 featured
                   ? lightAccent
-                    ? "text-[#111]/70"
+                    ? "text-foreground/70"
                     : "text-white/90"
-                  : "text-[#666666]",
+                  : "text-muted",
               )}
             >
               {item.body}

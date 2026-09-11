@@ -8,6 +8,7 @@ type LogoProps = {
   priority?: boolean;
 };
 
+/** 서비스 워드마크. 어두운 히어로에서는 logoOnDark를 씁니다. */
 export default function Logo({
   project,
   onDark = false,

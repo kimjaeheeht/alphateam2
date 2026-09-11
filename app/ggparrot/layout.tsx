@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: "text",
 };
 
+/** 껄무새 라우트 메타만 담당합니다. */
 export default function GgparrotLayout({
   children,
 }: LayoutProps<"/ggparrot">) {

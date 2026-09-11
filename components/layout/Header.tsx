@@ -26,7 +26,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/90 text-[#111] backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/90 text-foreground backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
@@ -42,8 +42,8 @@ export default function Header() {
               href={item.href}
               className={
                 isActive(pathname, item.href)
-                  ? "text-[#111]"
-                  : "text-[#6b6b6b] transition-colors hover:text-[#111]"
+                  ? "text-foreground"
+                  : "text-muted transition-colors hover:text-foreground"
               }
             >
               {item.label}
@@ -74,8 +74,8 @@ export default function Header() {
                   href={item.href}
                   className={`block py-2 text-sm ${
                     isActive(pathname, item.href)
-                      ? "text-[#111]"
-                      : "text-[#6b6b6b]"
+                      ? "text-foreground"
+                      : "text-muted"
                   }`}
                   onClick={() => setOpen(false)}
                 >

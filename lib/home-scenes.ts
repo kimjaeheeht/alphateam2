@@ -15,7 +15,7 @@ export const homeScenes = [
     id: "manifesto",
     background: "#f7f8fa",
     foreground: "#111111",
-    muted: "#6b6b6b",
+    muted: "#666666",
     planes: [
       "rgba(255,255,255,0.7)",
       "rgba(200,210,230,0.35)",
@@ -26,7 +26,7 @@ export const homeScenes = [
     id: "projects",
     background: "#ececec",
     foreground: "#111111",
-    muted: "#6b6b6b",
+    muted: "#666666",
     planes: [
       "rgba(255,255,255,0.7)",
       "rgba(200,200,200,0.35)",

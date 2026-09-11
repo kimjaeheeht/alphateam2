@@ -15,7 +15,7 @@ export default function ProjectCards() {
     >
       <Container>
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm text-[var(--muted)]">{homeContent.projectsTitle}</p>
+          <p className="text-sm text-muted">{homeContent.projectsTitle}</p>
           <h2 className="mt-3 text-2xl font-medium sm:text-4xl">
             {homeContent.projectsBody}
           </h2>

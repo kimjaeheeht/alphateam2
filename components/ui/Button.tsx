@@ -1,14 +1,15 @@
 import { cn } from "@/lib/cn";
 
+/** 서비스 페이지 CTA. 밝은 포인트 컬러일 때는 outline / solid를 씁니다. */
 const variants = {
   "outline-white":
     "border-white bg-transparent text-white hover:bg-white/10",
   outline:
-    "border-[#111] bg-transparent text-[#111] hover:bg-black/5",
+    "border-foreground bg-transparent text-foreground hover:bg-black/5",
   "solid-white":
-    "border-white bg-white text-[var(--accent)] hover:opacity-90",
+    "border-white bg-white text-accent hover:opacity-90",
   "solid-accent":
-    "border-transparent bg-[var(--accent)] text-[var(--on-accent)] hover:opacity-90",
+    "border-transparent bg-accent text-on-accent hover:opacity-90",
   solid: "border-transparent bg-black text-white hover:opacity-80",
 } as const;
 

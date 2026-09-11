@@ -10,6 +10,7 @@ import Button from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import type { ServicePageProps } from "@/lib/service-page";
 
+/** 서비스 쇼케이스 공통 레이아웃. 브랜드 색과 카피만 바꿔 세 페이지가 같이 씁니다. */
 export default function ServicePage({
   project,
   content,
@@ -18,10 +19,12 @@ export default function ServicePage({
 }: ServicePageProps) {
   const serviceId = `${project.slug}-service`;
   const hasScreen = Boolean(content.hero.screen);
+  // onAccent가 흰색이 아니면 노란 껄무새처럼 밝은 포인트 컬러로 보고 글자·버튼을 검게 둡니다.
   const lightAccent = project.onAccent.toLowerCase() !== "#ffffff";
 
   return (
     <>
+      {/* 섹션 - 히어로 */}
       <section
         className="relative overflow-hidden"
         style={{
@@ -29,6 +32,7 @@ export default function ServicePage({
           color: project.onAccent,
         }}
       >
+        {/* 배경 도형 */}
         <div
           className="pointer-events-none absolute -left-16 -top-10 size-[220px] rounded-full bg-white/10 sm:-left-24 sm:-top-16 sm:size-[360px] lg:-left-32 lg:top-[-20%] lg:size-[520px]"
           aria-hidden="true"
@@ -37,15 +41,15 @@ export default function ServicePage({
           className="pointer-events-none absolute -right-12 top-1/2 size-[260px] -translate-y-1/2 rounded-full bg-white/20 sm:-right-14 sm:size-[420px] lg:-right-16 lg:size-[640px]"
           aria-hidden="true"
         />
-        <Container className="relative min-h-[calc(100svh-4rem)] lg:min-h-[min(46rem,calc(100svh-4rem))]">
-          <div
-            className={cn(
-              "relative z-10 flex min-h-[calc(100svh-4rem)] flex-col justify-center pt-16 lg:min-h-[min(46rem,calc(100svh-4rem))] lg:pt-24",
-              hasScreen
-                ? "pb-52 sm:pb-56 lg:w-1/2 lg:pb-24"
-                : "pb-16 lg:w-full lg:pb-24",
-            )}
-          >
+
+        <Container
+          className={cn(
+            "relative flex min-h-[calc(100svh-4rem)] flex-col gap-10 pt-16 lg:min-h-[min(46rem,calc(100svh-4rem))] lg:grid lg:grid-cols-2 lg:gap-12 lg:pt-24",
+            !hasScreen && "lg:grid-cols-1",
+          )}
+        >
+          {/* 텍스트 영역 */}
+          <div className="relative z-10 flex flex-col justify-center lg:pb-24">
             <Logo project={project} onDark={!lightAccent} className="h-10" priority />
             <h1 className="mt-6 whitespace-pre-line text-[clamp(2rem,5vw,4rem)] font-bold">
               {content.hero.title}
@@ -70,8 +74,10 @@ export default function ServicePage({
               </Button>
             </div>
           </div>
+
+          {/* 화면 이미지 영역 */}
           {hasScreen ? (
-            <div className="absolute inset-x-5 bottom-0 flex justify-center sm:inset-x-8 lg:inset-x-auto lg:right-8 lg:w-1/2 lg:justify-end">
+            <div className="mt-auto flex justify-center lg:mt-0 lg:items-end lg:justify-end">
               <PhoneFrame
                 src={content.hero.screen ?? ""}
                 alt={`${project.name} 서비스 화면`}
@@ -83,7 +89,8 @@ export default function ServicePage({
         </Container>
       </section>
 
-      <section className="bg-[#eef0f3] py-20 sm:py-28">
+      {/* 섹션 - 기획 배경 */}
+      <section className="bg-surface py-20 sm:py-28">
         <Container>
           <ServiceHeading
             name={content.background.name}
@@ -101,7 +108,8 @@ export default function ServicePage({
         </Container>
       </section>
 
-      <section id={serviceId} className="bg-white py-20 sm:py-28">
+      {/* 섹션 - 서비스 소개 */}
+      <section id={serviceId} className="py-20 sm:py-28">
         <Container>
           <ServiceHeading
             name={content.service.name}
@@ -118,51 +126,55 @@ export default function ServicePage({
         </Container>
       </section>
 
+      {/* 섹션 - 핵심 기능 */}
       <section
         className="py-20 sm:py-28"
-        style={{ background: project.accent }}
+        style={{ background: project.accent, color: project.onAccent }}
       >
         <Container>
           <ServiceHeading
             name={content.highlight.name}
             title={content.highlight.title}
             body={content.highlight.body}
-            onDark={!lightAccent}
           />
           {content.highlight.items ? (
             <ServiceCards
               items={content.highlight.items}
               columns="sm:grid-cols-2 xl:grid-cols-4"
               variant="highlight"
-              align="center"
             />
           ) : null}
         </Container>
       </section>
 
+      {/* 섹션 - 브랜드 소개 */}
       <section className="bg-white py-20 sm:py-28">
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+            {/* 제목 */}
             <ServiceHeading
               name={content.brand.name}
               title={content.brand.title}
               align="left"
             />
+            {/* 로고 */}
             <Logo project={project} />
           </div>
           {content.brand.body ? (
             <div className="mt-10 grid items-end gap-12 lg:grid-cols-2">
-              <p className="max-w-xl whitespace-pre-line text-[#666]">
+              {/* 본문 */}
+              <p className="max-w-xl whitespace-pre-line text-muted">
                 {content.brand.body}
               </p>
+              {/* 키워드 */}
               <dl>
                 {content.brand.tokens.map((token, index) => (
                   <div
                     key={`${token.label}-${index}`}
-                    className="flex items-baseline gap-8 border-t border-[#e8eef5] py-4 last:border-b"
+                    className="flex items-baseline gap-8 border-t border-foreground/10 py-4 last:border-b"
                   >
                     <dt className="w-20 shrink-0 font-bold">{token.label}</dt>
-                    <dd className="text-[#666]">{token.value}</dd>
+                    <dd className="text-muted">{token.value}</dd>
                   </div>
                 ))}
               </dl>
@@ -171,13 +183,14 @@ export default function ServicePage({
         </Container>
       </section>
 
-      <section className="bg-[#eef0f3] py-20 text-center sm:py-28">
+      {/* 섹션 - 바로가기 */}
+      <section className="bg-surface py-20 text-center sm:py-28">
         <Container>
           <p className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold">
             {content.closing.title}
           </p>
           {content.closing.body ? (
-            <p className="mt-4 text-sm text-[#666] sm:text-base">
+            <p className="mt-4 text-sm text-muted sm:text-base">
               {content.closing.body}
             </p>
           ) : null}
@@ -188,15 +201,16 @@ export default function ServicePage({
             className="mt-8"
           >
             {content.closing.cta}
-            <ArrowRight className="size-4" aria-hidden="true" />
+            <MoveUpRight className="size-4" aria-hidden="true" />
           </Button>
         </Container>
       </section>
 
-      <nav aria-label="다른 서비스" className="bg-white text-[#111]">
+      {/* 섹션 - 다른 서비스 */}
+      <nav aria-label="다른 서비스">
         <Container className="flex min-h-24 items-center justify-between gap-6 py-6">
           {prev ? (
-            <Link href={prev.href} className="inline-flex items-center gap-2 text-lg hover:text-[var(--accent)]">
+            <Link href={prev.href} className="inline-flex items-center gap-2 text-lg hover:text-accent">
               <ArrowLeft className="size-4" aria-hidden="true" />
               {prev.name}
             </Link>
@@ -204,9 +218,9 @@ export default function ServicePage({
             <span />
           )}
           {next ? (
-            <Link href={next.href} className="inline-flex items-center gap-2 text-lg hover:text-[var(--accent)]">
+            <Link href={next.href} className="inline-flex items-center gap-2 text-lg hover:text-accent">
               {next.name}
-              <ArrowRight className="size-4" aria-hidden="true" />
+              <MoveUpRight className="size-4" aria-hidden="true" />
             </Link>
           ) : (
             <span />

@@ -2,12 +2,14 @@ export type ProjectSlug = "tripdito" | "torikong" | "ggparrot";
 
 export type PageTheme = "home" | ProjectSlug;
 
+/** 로고·마크 경로 */
 export type BrandAssets = {
   logo: string;
   logoOnDark: string;
   mark: string;
 };
 
+/** 서비스 메타. accent는 포인트, onAccent는 그 위 글자색입니다. */
 export type Project = {
   slug: ProjectSlug;
   name: string;
@@ -58,7 +60,7 @@ export const projects: Project[] = [
     onAccent: "#ffffff",
     assets: {
       logo: "/images/torikong/logo.svg",
-      logoOnDark: "/images/torikong/logo.svg",
+      logoOnDark: "/images/torikong/logo-white.svg",
       mark: "/images/torikong/mark-bg.svg",
     },
   },
@@ -101,6 +103,7 @@ export const heroPlanesHome = [
   "rgba(255,255,255,0.44)",
 ] as [string, string, string];
 
+/** slug로 서비스 메타를 찾습니다. */
 export function getProject(slug: ProjectSlug) {
   const project = projects.find((item) => item.slug === slug);
   if (!project) {
@@ -109,6 +112,7 @@ export function getProject(slug: ProjectSlug) {
   return project;
 }
 
+/** 목록 순서 기준 이전·다음 서비스입니다. */
 export function getAdjacentProjects(slug: ProjectSlug) {
   const index = projects.findIndex((item) => item.slug === slug);
   return {

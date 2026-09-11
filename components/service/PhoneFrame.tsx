@@ -7,6 +7,7 @@ type PhoneFrameProps = {
   priority?: boolean;
 };
 
+/** 히어로 우측 스크린샷. 하단은 섹션에 붙어 잘리도록 윗모서리만 둥급니다. */
 export default function PhoneFrame({
   src,
   alt,
@@ -16,7 +17,7 @@ export default function PhoneFrame({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-t-[1.75rem] bg-white shadow-[0_24px_80px_rgba(17,17,17,0.16)]",
+        "overflow-hidden rounded-t-2xl sm:rounded-t-4xl bg-white shadow-[0_24px_80px_rgba(17,17,17,0.16)]",
         className,
       )}
     >

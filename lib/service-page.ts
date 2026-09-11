@@ -1,5 +1,7 @@
 import type { Project } from "@/lib/projects";
 
+/** 서비스 쇼케이스 카피 스키마. 세 서비스가 같은 섹션 구조를 씁니다. */
+
 export type ServiceItem = {
   icon: string;
   title?: string;

@@ -4,15 +4,21 @@
   color-scheme: light;
   --background: #ffffff;
   --foreground: #111111;
-  --muted: #6b6b6b;
+  --muted: #666666;
+  --surface: #eef0f3;
   --accent: #111111;
+  --on-accent: #ffffff;
+  --secondary: #111111;
 }
-
-@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-secondary: var(--secondary);
   --font-sans: var(--font-pretendard), "Pretendard Variable", Pretendard,
     -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
@@ -146,15 +152,18 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="home"] {
   --background: #ffffff;
   --foreground: #111111;
-  --muted: #6b6b6b;
+  --muted: #666666;
+  --surface: #eef0f3;
   --accent: #111111;
   --on-accent: #ffffff;
+  --secondary: #111111;
 }
 
 [data-theme="tripdito"] {
   --background: #ffffff;
   --foreground: #111111;
-  --muted: #4e5968;
+  --muted: #666666;
+  --surface: #eef0f3;
   --accent: #3182f6;
   --on-accent: #ffffff;
   --secondary: #62cbff;
@@ -164,6 +173,7 @@ h1, h2, h3, h4, h5, h6 {
   --background: #ffffff;
   --foreground: #111111;
   --muted: #666666;
+  --surface: #eef0f3;
   --accent: #ff6087;
   --on-accent: #ffffff;
   --secondary: #ffbec7;
@@ -173,6 +183,7 @@ h1, h2, h3, h4, h5, h6 {
   --background: #ffffff;
   --foreground: #111111;
   --muted: #666666;
+  --surface: #eef0f3;
   --accent: #fcd535;
   --on-accent: #111111;
   --secondary: #ffe57c;

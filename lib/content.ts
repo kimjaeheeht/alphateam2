@@ -1,6 +1,7 @@
 import type { ProjectSlug } from "@/lib/projects";
 import type { ServicePageContent } from "@/lib/service-page";
 
+/** 홈 매니페스토·서비스 목록 카피 */
 export const homeContent = {
   manifesto: [
     {
@@ -26,6 +27,7 @@ export const homeContent = {
   projectsBody: "세 팀이 각자의 문제로 만든 서비스입니다.",
 };
 
+/** 공통 섹션명 */
 export const serviceSectionNames = {
   background: "기획 배경",
   service: "서비스 소개",
@@ -33,11 +35,13 @@ export const serviceSectionNames = {
   brand: "브랜드 소개",
 } as const;
 
+/** 공통 버튼명 */
 export const serviceCtas = {
   primary: "서비스 바로가기",
   secondary: "서비스 소개",
 } as const;
 
+/** 트립디토 카피 */
 export const tripditoContent: ServicePageContent = {
   hero: {
     title: "캡처해 둔 그 상품,\n여행지에서 바로 찾으세요!",
@@ -66,7 +70,7 @@ export const tripditoContent: ServicePageContent = {
   },
   service: {
     name: serviceSectionNames.service,
-    title: "이미지 한 장으로, 현지에서 바로",
+    title: "이미지 한 장으로,\n현지에서 바로",
     body: "TripDito는 여행에서 사고 싶은 상품을 이미지 한 장으로 찾고,\n쇼핑리스트로 정리한 뒤 현지 구매 동선까지 연결하는 여행 쇼핑 서비스입니다.",
     items: [
       {
@@ -140,6 +144,7 @@ export const tripditoContent: ServicePageContent = {
 
 const TEXT = "text";
 
+/** 토리콩·껄무새 기획용 플레이스홀더. 섹션명·CTA만 채우고 본문은 text입니다. */
 function placeholderContent(): ServicePageContent {
   return {
     hero: {
@@ -199,6 +204,7 @@ function placeholderContent(): ServicePageContent {
 export const torikongContent = placeholderContent();
 export const ggparrotContent = placeholderContent();
 
+/** slug → 쇼케이스 카피 */
 export const serviceContent: Record<ProjectSlug, ServicePageContent> = {
   tripdito: tripditoContent,
   torikong: torikongContent,

@@ -83,7 +83,7 @@ export default function HomeManifesto() {
     <section
       ref={sectionRef}
       data-home-scene="manifesto"
-      className="home-snap-section relative flex flex-col bg-[#f7f8fa] text-[#111]"
+      className="home-snap-section relative flex flex-col bg-[#f7f8fa] text-foreground"
     >
       <div ref={railRef} className="home-slide-rail min-h-0 flex-1">
         {homeContent.manifesto.map((item) => (
@@ -92,7 +92,7 @@ export default function HomeManifesto() {
               <h2 className="whitespace-pre-line text-[clamp(1.75rem,6.5vw,5.75rem)] font-bold">
                 {item.title}
               </h2>
-              <p className="mt-5 max-w-3xl text-base text-[#555] sm:mt-7 sm:text-xl lg:text-2xl">
+              <p className="mt-5 max-w-3xl text-base text-muted sm:mt-7 sm:text-xl lg:text-2xl">
                 {item.body}
               </p>
               <ol className="mt-10 flex items-center gap-3 text-sm sm:mt-14 sm:text-base">
@@ -108,7 +108,7 @@ export default function HomeManifesto() {
                       onClick={() => goTo(index)}
                       className={
                         index === active
-                          ? "text-[#111]"
+                          ? "text-foreground"
                           : "text-black/30 transition-colors hover:text-black/70"
                       }
                     >

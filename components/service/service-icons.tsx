@@ -11,6 +11,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+/** 콘텐츠의 icon 문자열과 Lucide 아이콘을 연결합니다. */
 const icons: Record<string, LucideIcon> = {
   Camera,
   ImageIcon,
@@ -23,6 +24,7 @@ const icons: Record<string, LucideIcon> = {
   Upload,
 };
 
+/** 카드 icon 이름으로 Lucide 아이콘을 그립니다. */
 export function ServiceIcon({
   name,
   className,
