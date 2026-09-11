@@ -1,5 +1,5 @@
-import GgparrotPage from "@/components/ggparrot/GgparrotPage";
+import ServiceProjectPage from "@/components/service/ServiceProjectPage";
 
 export default function Page() {
-  return <GgparrotPage />;
+  return <ServiceProjectPage slug="ggparrot" />;
 }

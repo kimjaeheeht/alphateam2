@@ -1,5 +1,5 @@
-import TorikongPage from "@/components/torikong/TorikongPage";
+import ServiceProjectPage from "@/components/service/ServiceProjectPage";
 
 export default function Page() {
-  return <TorikongPage />;
+  return <ServiceProjectPage slug="torikong" />;
 }

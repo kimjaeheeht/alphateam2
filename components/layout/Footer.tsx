@@ -5,7 +5,7 @@ import { projects } from "@/lib/projects";
 export default function Footer() {
   return (
     <footer className="mt-auto bg-[#1a1a1a] text-white">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-end sm:justify-between sm:px-8">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-end sm:justify-between sm:px-8">
         <div>
           <p className="text-sm">알파팀 2기</p>
           <p className="mt-2 text-sm text-white/50">세 개의 서비스 쇼케이스</p>

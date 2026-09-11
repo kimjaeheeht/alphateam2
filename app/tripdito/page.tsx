@@ -1,5 +1,5 @@
-import TripditoPage from "@/components/tripdito/TripditoPage";
+import ServiceProjectPage from "@/components/service/ServiceProjectPage";
 
 export default function Page() {
-  return <TripditoPage />;
+  return <ServiceProjectPage slug="tripdito" />;
 }
