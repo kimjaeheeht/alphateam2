@@ -45,7 +45,7 @@ export const serviceCtas = {
 export const tripditoContent: ServicePageContent = {
   hero: {
     title: "캡처해 둔 그 상품,\n여행지에서 바로 찾으세요!",
-    body: "이미지 한 장으로 상품을 찾고, 쇼핑리스트로 정리하고,\n현지 판매처까지 연결하는 여행 쇼핑 서비스",
+    body: "이미지 한 장으로 상품을 찾고, 쇼핑 리스트로 정리하고,\n현지 판매처까지 연결하는 여행 쇼핑 서비스",
     screen: "/images/tripdito/service-01.png",
     cta: serviceCtas.primary,
     ctaSecondary: serviceCtas.secondary,
@@ -60,7 +60,7 @@ export const tripditoContent: ServicePageContent = {
       },
       {
         icon: "Search",
-        body: "쇼핑리스트를 다시 만들고 검색하는 일은 번거롭고, 결국 사고 싶었던 상품을 놓치기도 합니다.",
+        body: "쇼핑 리스트를 다시 만들고 검색하는 일은 번거롭고, 결국 사고 싶었던 상품을 놓치기도 합니다.",
       },
       {
         icon: "Lightbulb",
@@ -71,7 +71,7 @@ export const tripditoContent: ServicePageContent = {
   service: {
     name: serviceSectionNames.service,
     title: "이미지 한 장으로,\n현지에서 바로",
-    body: "TripDito는 여행에서 사고 싶은 상품을 이미지 한 장으로 찾고,\n쇼핑리스트로 정리한 뒤 현지 구매 동선까지 연결하는 여행 쇼핑 서비스입니다.",
+    body: "TripDito는 여행에서 사고 싶은 상품을 이미지 한 장으로 찾고,\n쇼핑 리스트로 정리한 뒤 현지 구매 동선까지 연결하는 여행 쇼핑 서비스입니다.",
     items: [
       {
         icon: "Upload",
@@ -88,7 +88,7 @@ export const tripditoContent: ServicePageContent = {
       {
         icon: "ListChecks",
         step: "03",
-        title: "쇼핑리스트 저장",
+        title: "쇼핑 리스트 저장",
         body: "분석한 상품을 내 리스트에 바로 담습니다.",
       },
       {
@@ -111,7 +111,7 @@ export const tripditoContent: ServicePageContent = {
       {
         icon: "ListChecks",
         title: "내 여행 리스트",
-        body: "여행지별로 쇼핑리스트를 만들고, 다시 사용할 수 있습니다.",
+        body: "여행지별로 쇼핑 리스트를 만들고, 다시 사용할 수 있습니다.",
       },
       {
         icon: "MapPin",
@@ -121,7 +121,7 @@ export const tripditoContent: ServicePageContent = {
       {
         icon: "Camera",
         title: "때샷 · 랭킹",
-        body: "다른 사람의 쇼핑리스트를 보고 마음에 드는 상품을 내 리스트에 담습니다.",
+        body: "다른 사람의 쇼핑 리스트를 보고 마음에 드는 상품을 내 리스트에 담습니다.",
       },
     ],
   },

@@ -30,13 +30,12 @@ export default function ServiceCards({
     <ul className={cn("mt-10 sm:mt-16 grid gap-6", columns)}>
       {items.map((item, index) => {
         const featured = accentLast && index === items.length - 1;
-        const titleBesideIcon = variant === "highlight" && Boolean(item.title);
 
         return (
           <li
             key={`${item.title ?? item.body}-${index}`}
             className={cn(
-              "rounded-3xl sm:rounded-4xl px-6 sm:px-8 py-7 sm:py-10",
+              "flex flex-col gap-6 rounded-3xl px-6 py-7 sm:rounded-4xl sm:px-8 sm:py-10",
               featured
                 ? lightAccent
                   ? "text-foreground"
@@ -52,8 +51,8 @@ export default function ServiceCards({
           >
             <div
               className={cn(
-                "flex items-center gap-4",
-                item.step ? "justify-between" : "",
+                "flex items-start gap-4",
+                item.step && "justify-between",
                 align === "center" && "justify-center",
               )}
             >
@@ -71,29 +70,27 @@ export default function ServiceCards({
               >
                 <ServiceIcon name={item.icon} className="size-5" />
               </span>
-              {titleBesideIcon ? (
-                <h3 className="text-lg font-medium">{item.title}</h3>
-              ) : null}
               {item.step ? (
                 <span className="text-sm text-muted">{item.step}</span>
               ) : null}
             </div>
-            {!titleBesideIcon && item.title ? (
-              <h3 className="mt-6 text-lg font-medium">{item.title}</h3>
-            ) : null}
-            <p
-              className={cn(
-                item.title ? "mt-4" : "mt-6",
-                "text-sm",
-                featured
-                  ? lightAccent
-                    ? "text-foreground/70"
-                    : "text-white/90"
-                  : "text-muted",
-              )}
-            >
-              {item.body}
-            </p>
+            <div className="flex flex-col gap-2">
+              {item.title ? (
+                <h3 className="text-lg font-medium">{item.title}</h3>
+              ) : null}
+              <p
+                className={cn(
+                  "text-sm",
+                  featured
+                    ? lightAccent
+                      ? "text-foreground/70"
+                      : "text-white/90"
+                    : "text-muted",
+                )}
+              >
+                {item.body}
+              </p>
+            </div>
           </li>
         );
       })}

@@ -32,7 +32,7 @@ export const projects: Project[] = [
     nameEn: "TripDito",
     tagline: "이미지 한 장으로, 여행 쇼핑",
     summary:
-      "이미지 한 장으로 해외여행 쇼핑리스트를 만들고, 현지 구매 동선을 잡아 줍니다.",
+      "이미지 한 장으로 해외여행 쇼핑 리스트를 만들고, 현지 구매 동선을 잡아 줍니다.",
     href: "/tripdito",
     liveUrl: "https://trip-shopping.vercel.app/",
     category: "여행 쇼핑",
