@@ -30,7 +30,7 @@ export default function Header() {
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
-          className="shrink-0 text-sm"
+          className="shrink-0 text-sm font-bold"
           onClick={() => setOpen(false)}
         >
           알파팀 2기

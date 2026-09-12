@@ -26,15 +26,29 @@ export const homeContent = {
       body: "생각에 머물지 않고, 사람들에게 닿는 경험으로 이어갑니다.",
     },
   ],
-  projectsTitle: "서비스 바로가기",
   journey: {
+    name: "진행 과정",
     title: "아이디어에서 서비스까지",
     items: [
-      { value: "10", unit: "개", label: "아이디어" },
-      { value: "7", unit: "개", label: "PoC" },
-      { value: "3", unit: "개", label: "서비스" },
+      {
+        value: "10",
+        label: "아이디어 발굴",
+        body: "다양한 아이디어 제안",
+      },
+      {
+        value: "7",
+        label: "PoC 구현",
+        body: "프로토타입 개발",
+      },
+      {
+        value: "3",
+        label: "서비스 후보",
+        body: "발표 대상 선정",
+      },
     ],
   },
+  projectsName: "서비스 소개",
+  projectsTitle: "세 개의 서비스를 소개합니다",
 };
 
 /** 공통 섹션명 */
@@ -50,6 +64,23 @@ export const serviceCtas = {
   primary: "서비스 바로가기",
   secondary: "서비스 소개",
 } as const;
+
+/** 홈 배너·클로징 본문 공통 문구 (projects.tagline) */
+export function getProjectPitch(project: { tagline: string }) {
+  return project.tagline;
+}
+
+/** 클로징: `{서비스명}에서 직접 확인해 보세요!` + 피치 + 공통 CTA */
+export function buildServiceClosing(project: {
+  name: string;
+  tagline: string;
+}) {
+  return {
+    title: `${project.name}에서 직접 확인해 보세요!`,
+    body: getProjectPitch(project),
+    cta: serviceCtas.primary,
+  };
+}
 
 /** 트립디토 카피 */
 export const tripditoContent: ServicePageContent = {
@@ -147,17 +178,11 @@ export const tripditoContent: ServicePageContent = {
       { label: "Pick", value: "좋아하는 것을 선택하고 담는 경험" },
     ],
   },
-  closing: {
-    title: "TripDito에서 직접 확인해 보세요!",
-    body: "이미지 한 장에서 시작되는 여행 쇼핑 경험",
-    cta: serviceCtas.primary,
-  },
 };
 
 /** 토리콩 카피 */
 export const torikongContent: ServicePageContent = {
   hero: {
-    title: "우리 아이만의\n특별한 이야기",
     screens: [
       "/images/torikong/visual/01.png",
       "/images/torikong/visual/02.png",
@@ -206,17 +231,11 @@ export const torikongContent: ServicePageContent = {
       { label: "text", value: "text" },
     ],
   },
-  closing: {
-    title: "text",
-    body: "text",
-    cta: serviceCtas.primary,
-  },
 };
 
 /** 껄무새 카피 */
 export const ggparrotContent: ServicePageContent = {
   hero: {
-    title: "코린이도\n쉽게 시작하는\n코인 매크로",
     screens: [
       "/images/ggparrot/visual/01.png",
       "/images/ggparrot/visual/02.png",
@@ -264,11 +283,6 @@ export const ggparrotContent: ServicePageContent = {
       { label: "text", value: "text" },
       { label: "text", value: "text" },
     ],
-  },
-  closing: {
-    title: "text",
-    body: "text",
-    cta: serviceCtas.primary,
   },
 };
 

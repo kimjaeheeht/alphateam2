@@ -8,6 +8,7 @@ import ServiceCards from "@/components/service/ServiceCards";
 import ServiceHeading from "@/components/service/ServiceHeading";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
+import { buildServiceClosing, getProjectPitch } from "@/lib/content";
 import type { ServicePageProps } from "@/lib/service-page";
 
 /** 서비스 쇼케이스 공통 레이아웃. 브랜드 색과 카피만 바꿔 세 페이지가 같이 씁니다. */
@@ -25,6 +26,9 @@ export default function ServicePage({
   // onAccent가 흰색이 아니면 노란 껄무새처럼 밝은 포인트 컬러로 보고 글자·버튼을 검게 둡니다.
   const lightAccent = project.onAccent.toLowerCase() !== "#ffffff";
   const hasHeroCta = Boolean(hero?.cta || hero?.ctaSecondary);
+  const closing = buildServiceClosing(project);
+  /** 히어로 제목 미입력 시 홈 배너·클로징과 같은 피치 문구 사용 */
+  const heroTitle = hero?.title ?? getProjectPitch(project);
 
   return (
     <>
@@ -58,9 +62,9 @@ export default function ServicePage({
             {/* 텍스트 영역 */}
             <div className="relative z-10 flex w-full flex-col justify-center">
               <Logo project={project} onDark={!lightAccent} className="h-12" priority />
-              {hero.title ? (
+              {heroTitle ? (
                 <h1 className="mt-6 whitespace-pre-line text-[clamp(2rem,5vw,4rem)] font-bold">
-                  {hero.title}
+                  {heroTitle}
                 </h1>
               ) : null}
               {hasHeroCta ? (
@@ -216,34 +220,24 @@ export default function ServicePage({
         </section>
       ) : null}
 
-      {/* 섹션 - 바로가기 */}
-      {content.closing ? (
-        <section className="bg-surface py-20 text-center sm:py-28">
-          <Container>
-            {content.closing.title ? (
-              <p className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold">
-                {content.closing.title}
-              </p>
-            ) : null}
-            {content.closing.body ? (
-              <p className="mt-4 text-sm text-muted sm:text-base">
-                {content.closing.body}
-              </p>
-            ) : null}
-            {content.closing.cta ? (
-              <Button
-                href={project.liveUrl}
-                variant={lightAccent ? "solid" : "solid-accent"}
-                external
-                className="mt-8"
-              >
-                {content.closing.cta}
-                <MoveUpRight className="size-4" aria-hidden="true" />
-              </Button>
-            ) : null}
-          </Container>
-        </section>
-      ) : null}
+      {/* 섹션 - 바로가기 (서비스명·태그라인으로 자동 생성) */}
+      <section className="bg-surface py-20 text-center sm:py-28">
+        <Container>
+          <p className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold">
+            {closing.title}
+          </p>
+          <p className="mt-4 text-sm text-muted sm:text-base">{closing.body}</p>
+          <Button
+            href={project.liveUrl}
+            variant={lightAccent ? "solid" : "solid-accent"}
+            external
+            className="mt-8"
+          >
+            {closing.cta}
+            <MoveUpRight className="size-4" aria-hidden="true" />
+          </Button>
+        </Container>
+      </section>
 
       {/* 섹션 - 다른 서비스 */}
       <nav aria-label="다른 서비스">

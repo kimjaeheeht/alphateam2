@@ -2,16 +2,18 @@ import Link from "next/link";
 
 import BrandImage from "@/components/brand/BrandImage";
 import Container from "@/components/layout/Container";
-import { homeContent } from "@/lib/content";
+import ServiceHeading from "@/components/service/ServiceHeading";
+import { getProjectPitch, homeContent } from "@/lib/content";
 import { projects } from "@/lib/projects";
 
 export default function ProjectCards() {
   return (
     <section className="bg-surface py-20 sm:py-28">
       <Container>
-        <h2 className="text-center text-[clamp(1.75rem,4vw,2.75rem)] font-bold">
-          {homeContent.projectsTitle}
-        </h2>
+        <ServiceHeading
+          name={homeContent.projectsName}
+          title={homeContent.projectsTitle}
+        />
 
         <ul className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-3">
           {projects.map((project) => (
@@ -30,8 +32,8 @@ export default function ProjectCards() {
                     className="max-h-10 w-auto max-w-[9.5rem] object-contain"
                   />
                 </div>
-                <p className="mt-6 text-[15px] leading-relaxed text-muted">
-                  {project.tagline}
+                <p className="mt-6 text-sm sm:text-base leading-relaxed text-muted">
+                  {getProjectPitch(project)}
                 </p>
               </Link>
             </li>

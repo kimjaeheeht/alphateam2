@@ -1,4 +1,5 @@
 import Container from "@/components/layout/Container";
+import ServiceHeading from "@/components/service/ServiceHeading";
 import { homeContent } from "@/lib/content";
 
 /** 알파랩 2기 여정 숫자. 매니페스토와 서비스 사이에 둡니다. */
@@ -11,26 +12,51 @@ export default function HomeJourney() {
       aria-labelledby="home-journey"
     >
       <Container>
-        <h2
-          id="home-journey"
-          className="text-center text-[clamp(1.75rem,4vw,2.75rem)] font-bold"
-        >
-          {journey.title}
-        </h2>
+        <div className="mx-auto max-w-5xl">
+          <ServiceHeading
+            name={journey.name}
+            title={journey.title}
+            titleId="home-journey"
+          />
 
-        <ul className="mt-12 grid grid-cols-3 gap-6 sm:mt-16 sm:gap-8">
-          {journey.items.map((item) => (
-            <li key={item.label} className="text-center">
-              <p className="text-[clamp(2.5rem,6vw,3.75rem)] font-bold leading-none">
-                {item.value}
-                <span className="ml-1 text-[0.4em] font-medium text-muted">
-                  {item.unit}
-                </span>
-              </p>
-              <p className="mt-3 text-sm text-muted">{item.label}</p>
-            </li>
-          ))}
-        </ul>
+          <div className="relative mt-10 sm:mt-14">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute top-[6.25rem] right-[16.666%] left-[16.666%] hidden h-px -translate-y-1/2 bg-foreground/15 sm:block"
+            />
+
+            <ul className="relative flex flex-col gap-8 sm:grid sm:grid-cols-3 sm:gap-8">
+              {journey.items.map((item, index) => (
+                <li
+                  key={item.label}
+                  className="flex items-center gap-5 sm:flex-col sm:items-center sm:gap-0 sm:text-center"
+                >
+                  <div className="relative shrink-0">
+                    {index < journey.items.length - 1 ? (
+                      <div
+                        aria-hidden
+                        className="absolute top-full left-1/2 h-8 w-px -translate-x-1/2 bg-foreground/15 sm:hidden"
+                      />
+                    ) : null}
+                    <div className="relative z-10 flex size-[5.5rem] items-center justify-center rounded-full bg-surface sm:size-[12.5rem]">
+                      <p className="text-[2.35rem] font-bold leading-none tracking-tight text-foreground sm:text-[clamp(2.5rem,7.5vw,4.25rem)]">
+                        {item.value}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="min-w-0 flex-1 text-left sm:mt-5 sm:text-center">
+                    <p className="text-lg font-bold text-foreground sm:text-xl">
+                      {item.label}
+                    </p>
+                    <p className="mt-1 text-sm text-muted sm:mt-2 sm:text-base">
+                      {item.body}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </Container>
     </section>
   );

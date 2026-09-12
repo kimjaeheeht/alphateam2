@@ -5,6 +5,7 @@ type ServiceHeadingProps = {
   title?: string;
   body?: string;
   align?: "center" | "left";
+  titleId?: string;
 };
 
 /** ??? / ? ?? / ??. ???? ?? ??? color? ?????. */
@@ -13,16 +14,18 @@ export default function ServiceHeading({
   title,
   body,
   align = "center",
+  titleId,
 }: ServiceHeadingProps) {
   if (!name && !title && !body) return null;
 
   return (
     <div className={cn(align === "center" && "mx-auto max-w-3xl text-center")}>
       {name ? (
-        <p className="text-sm font-medium uppercase text-current/50">{name}</p>
+        <p className="text-sm font-medium text-current/50">{name}</p>
       ) : null}
       {title ? (
         <h2
+          id={titleId}
           className={cn(
             "whitespace-pre-line text-[clamp(1.75rem,4vw,2.75rem)] font-bold",
             name ? "mt-5" : undefined,

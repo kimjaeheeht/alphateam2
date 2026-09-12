@@ -36,11 +36,6 @@ export type ServicePageContent = {
   brand?: ServiceSection & {
     tokens?: ServiceToken[];
   };
-  closing?: {
-    title?: string;
-    body?: string;
-    cta?: string;
-  };
 };
 
 export type ServicePageProps = {
