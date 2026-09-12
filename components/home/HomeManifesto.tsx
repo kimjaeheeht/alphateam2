@@ -1,7 +1,8 @@
 import Container from "@/components/layout/Container";
+import { ServiceIcon } from "@/components/service/service-icons";
 import { homeContent } from "@/lib/content";
 
-/** 매니페스토 카드 3장. 트립디토 기획 배경 카드와 같은 박스 그리드입니다. */
+/** 매니페스토 카드 3장. 서비스 카드처럼 아이콘·스텝을 배치합니다. */
 export default function HomeManifesto() {
   return (
     <section className="bg-surface py-20 sm:py-28" aria-labelledby="home-manifesto">
@@ -15,12 +16,19 @@ export default function HomeManifesto() {
               key={item.id}
               className="flex flex-col gap-6 rounded-3xl bg-white px-6 py-7 sm:rounded-4xl sm:px-8 sm:py-10"
             >
-              <p className="text-sm text-muted">{item.step}</p>
-              <div className="flex flex-col gap-2">
+              <div className="flex items-start justify-between gap-4">
+                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-2xl bg-surface text-foreground">
+                  <ServiceIcon name={item.icon} className="size-5" />
+                </span>
+                <span className="text-sm text-muted">{item.step}</span>
+              </div>
+              <div className="flex flex-col gap-3">
                 <h3 className="whitespace-pre-line text-xl font-bold sm:text-2xl">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted sm:text-[15px]">{item.body}</p>
+                <p className="whitespace-pre-line text-sm text-muted sm:text-base">
+                  {item.body}
+                </p>
               </div>
             </li>
           ))}

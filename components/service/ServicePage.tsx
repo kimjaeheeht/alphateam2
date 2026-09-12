@@ -19,7 +19,8 @@ export default function ServicePage({
 }: ServicePageProps) {
   const serviceId = `${project.slug}-service`;
   const hero = content.hero;
-  const hasScreen = Boolean(hero?.screen);
+  const screens = hero?.screens ?? [];
+  const hasScreen = screens.length > 0;
   const desktopScreen = hero?.device === "desktop";
   // onAccent가 흰색이 아니면 노란 껄무새처럼 밝은 포인트 컬러로 보고 글자·버튼을 검게 둡니다.
   const lightAccent = project.onAccent.toLowerCase() !== "#ffffff";
@@ -48,14 +49,14 @@ export default function ServicePage({
 
           <Container
             className={cn(
-              "relative flex min-h-[calc(100svh-4rem)] flex-col gap-10 pt-16 lg:min-h-[min(46rem,calc(100svh-4rem))] lg:grid lg:gap-12 lg:pt-24",
+              "relative flex flex-col items-center gap-10 py-20 sm:py-28 lg:grid lg:items-center lg:gap-12 xl:min-h-[800px]",
               !hasScreen && "lg:grid-cols-1",
               hasScreen && desktopScreen && "lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]",
               hasScreen && !desktopScreen && "lg:grid-cols-2",
             )}
           >
             {/* 텍스트 영역 */}
-            <div className="relative z-10 flex flex-col justify-center lg:pb-24">
+            <div className="relative z-10 flex w-full flex-col justify-center">
               <Logo project={project} onDark={!lightAccent} className="h-12" priority />
               {hero.title ? (
                 <h1 className="mt-6 whitespace-pre-line text-[clamp(2rem,5vw,4rem)] font-bold">
@@ -68,7 +69,7 @@ export default function ServicePage({
                 </p>
               ) : null}
               {hasHeroCta ? (
-                <div className="mt-10 flex flex-wrap gap-3">
+                <div className="mt-10 sm:mt-16 flex flex-wrap gap-3">
                   {hero.cta ? (
                     <Button
                       href={project.liveUrl}
@@ -91,25 +92,22 @@ export default function ServicePage({
               ) : null}
             </div>
 
-            {/* 화면 이미지 영역 — phone은 하단 고정, desktop은 세로 중앙 */}
+            {/* 화면 이미지 영역 — 폰·데스크탑 모두 세로 중앙 */}
             {hasScreen ? (
               <div
                 className={cn(
-                  "flex",
-                  desktopScreen
-                    ? "items-center justify-stretch"
-                    : "mt-auto justify-center lg:mt-0 lg:items-end lg:justify-end",
+                  "flex w-full items-center",
+                  desktopScreen ? "justify-stretch" : "justify-center",
                 )}
               >
                 <HeroScreen
-                  src={hero.screen ?? ""}
-                  srcSm={hero.screenSm}
+                  screens={screens}
                   alt={`${project.name} 서비스 화면`}
                   device={desktopScreen ? "desktop" : "phone"}
                   className={
                     desktopScreen
                       ? "w-full"
-                      : "w-[min(200px,58vw)] translate-y-8 sm:w-[240px] sm:translate-y-10 lg:w-[320px] lg:translate-y-12 xl:w-[360px]"
+                      : "w-[min(200px,58vw)] sm:w-[240px] lg:w-[280px] xl:w-[300px]"
                   }
                   priority
                 />

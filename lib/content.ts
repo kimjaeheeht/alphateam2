@@ -7,18 +7,21 @@ export const homeContent = {
     {
       id: "m1",
       step: "01",
+      icon: "Heart",
       title: "좋아하는 마음을,\n들여다봅니다.",
       body: "사람들이 좋아하고, 찾고, 나누는 순간에 주목합니다.",
     },
     {
       id: "m2",
       step: "02",
+      icon: "RefreshCw",
       title: "익숙한 일상을,\n다르게 바라봅니다.",
       body: "반복되는 행동과 무심코 지나친 불편을 다시 바라봅니다.",
     },
     {
       id: "m3",
       step: "03",
+      icon: "Rocket",
       title: "작은 생각을,\n끝까지 이어갑니다.",
       body: "생각에 머물지 않고, 사람들에게 닿는 경험으로 이어갑니다.",
     },
@@ -46,7 +49,10 @@ export const tripditoContent: ServicePageContent = {
   hero: {
     title: "캡처해 둔 그 상품,\n여행지에서 바로 찾으세요!",
     // body: "이미지 한 장으로 상품을 찾고,\n쇼핑 리스트로 정리하고,\n현지 판매처까지 연결하는 여행 쇼핑 서비스",
-    screen: "/images/tripdito/service-01.png",
+    screens: [
+      "/images/tripdito/visual/01.png",
+      "/images/tripdito/visual/02.png",
+    ],
     cta: serviceCtas.primary,
     ctaSecondary: serviceCtas.secondary,
   },
@@ -142,78 +148,32 @@ export const tripditoContent: ServicePageContent = {
   },
 };
 
-const TEXT = "text";
+/** 토리콩 카피 */
+export const torikongContent: ServicePageContent = {
+  hero: {
+    screens: [
+      "/images/torikong/visual/01.png",
+      "/images/torikong/visual/02.png",
+    ],
+    device: "desktop",
+    cta: serviceCtas.primary,
+    ctaSecondary: serviceCtas.secondary,
+  },
+};
 
-/** 토리콩·껄무새 기획용 플레이스홀더. 섹션명·CTA만 채우고 본문은 text입니다. */
-function placeholderContent(
-  hero?: Pick<NonNullable<ServicePageContent["hero"]>, "screen" | "screenSm" | "device">,
-): ServicePageContent {
-  return {
-    hero: {
-      title: TEXT,
-      body: TEXT,
-      cta: serviceCtas.primary,
-      ctaSecondary: serviceCtas.secondary,
-      ...hero,
-    },
-    background: {
-      name: serviceSectionNames.background,
-      title: TEXT,
-      items: [
-        { icon: "Share2", body: TEXT },
-        { icon: "Search", body: TEXT },
-        { icon: "Lightbulb", body: TEXT },
-      ],
-    },
-    service: {
-      name: serviceSectionNames.service,
-      title: TEXT,
-      body: TEXT,
-      items: [
-        { icon: "Upload", step: "01", title: TEXT, body: TEXT },
-        { icon: "ScanSearch", step: "02", title: TEXT, body: TEXT },
-        { icon: "ListChecks", step: "03", title: TEXT, body: TEXT },
-        { icon: "MapPin", step: "04", title: TEXT, body: TEXT },
-      ],
-    },
-    highlight: {
-      name: serviceSectionNames.highlight,
-      title: TEXT,
-      items: [
-        { icon: "ImageIcon", title: TEXT, body: TEXT },
-        { icon: "ListChecks", title: TEXT, body: TEXT },
-        { icon: "MapPin", title: TEXT, body: TEXT },
-        { icon: "Camera", title: TEXT, body: TEXT },
-      ],
-    },
-    brand: {
-      name: serviceSectionNames.brand,
-      title: TEXT,
-      body: TEXT,
-      tokens: [
-        { label: TEXT, value: TEXT },
-        { label: TEXT, value: TEXT },
-        { label: TEXT, value: TEXT },
-      ],
-    },
-    closing: {
-      title: TEXT,
-      body: TEXT,
-      cta: serviceCtas.primary,
-    },
-  };
-}
-
-export const torikongContent = placeholderContent({
-  screen: "/images/torikong/service-01.png",
-  device: "desktop",
-});
-
-export const ggparrotContent = placeholderContent({
-  screen: "/images/ggparrot/service-01.png",
-  screenSm: "/images/ggparrot/service-01-sm.png",
-  device: "desktop",
-});
+/** 껄무새 카피 */
+export const ggparrotContent: ServicePageContent = {
+  hero: {
+    title: "코린이도\n쉽게 시작하는\n코인 매크로",
+    screens: [
+      "/images/ggparrot/visual/01.png",
+      "/images/ggparrot/visual/02.png",
+    ],
+    device: "desktop",
+    cta: serviceCtas.primary,
+    ctaSecondary: serviceCtas.secondary,
+  },
+};
 
 /** slug → 쇼케이스 카피 */
 export const serviceContent: Record<ProjectSlug, ServicePageContent> = {

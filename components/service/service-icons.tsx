@@ -1,9 +1,12 @@
 import {
   Camera,
+  Heart,
   ImageIcon,
   Lightbulb,
   ListChecks,
   MapPin,
+  RefreshCw,
+  Rocket,
   ScanSearch,
   Search,
   Share2,
@@ -14,10 +17,13 @@ import {
 /** 콘텐츠의 icon 문자열과 Lucide 아이콘을 연결합니다. */
 const icons: Record<string, LucideIcon> = {
   Camera,
+  Heart,
   ImageIcon,
   Lightbulb,
   ListChecks,
   MapPin,
+  RefreshCw,
+  Rocket,
   ScanSearch,
   Search,
   Share2,
