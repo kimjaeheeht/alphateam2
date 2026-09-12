@@ -24,7 +24,6 @@ export type ServiceToken = {
 export type ServicePageContent = {
   hero?: {
     title?: string;
-    body?: string;
     /** 히어로 스크린샷. 2장 이상이면 교체 모션이 돌아갑니다. */
     screens?: string[];
     device?: "phone" | "desktop";

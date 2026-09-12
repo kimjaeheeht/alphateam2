@@ -5,8 +5,9 @@ import ProjectCards from "@/components/home/ProjectCards";
 export default function HomePage() {
   return (
     <>
-      <HomeHero />
-      <HomeJourney />
+      <HomeHero>
+        <HomeJourney />
+      </HomeHero>
       <ProjectCards />
     </>
   );

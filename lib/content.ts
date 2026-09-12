@@ -8,35 +8,31 @@ export const homeContent = {
       id: "m1",
       step: "01",
       icon: "Heart",
-      title: "좋아하는 마음을,\n들여다봅니다.",
+      title: "좋아하는 마음을\n들여다봅니다.",
       body: "사람들이 좋아하고, 찾고, 나누는 순간에 주목합니다.",
     },
     {
       id: "m2",
       step: "02",
       icon: "RefreshCw",
-      title: "익숙한 일상을,\n다르게 바라봅니다.",
+      title: "익숙한 일상을\n다르게 바라봅니다.",
       body: "반복되는 행동과 무심코 지나친 불편을 다시 바라봅니다.",
     },
     {
       id: "m3",
       step: "03",
       icon: "Rocket",
-      title: "작은 생각을,\n끝까지 이어갑니다.",
+      title: "작은 생각을\n끝까지 이어갑니다.",
       body: "생각에 머물지 않고, 사람들에게 닿는 경험으로 이어갑니다.",
     },
   ],
-  projectsTitle: "서비스",
-  projectsBody: "세 팀이 각자의 문제로 만든 서비스입니다.",
+  projectsTitle: "서비스 바로가기",
   journey: {
-    name: "여정",
-    title: "숫자로 보는\n알파팀 2기",
-    body: "짧은 시간 동안 아이디어를 모으고, 끝까지 밀어붙여 세 개의 서비스로 남겼습니다.",
+    title: "아이디어에서 서비스까지",
     items: [
-      { value: "8", unit: "명", label: "함께한 팀원" },
-      { value: "2", unit: "개월", label: "도전한 기간" },
-      { value: "10", unit: "개", label: "나눈 아이디어" },
-      { value: "3", unit: "개", label: "만든 서비스" },
+      { value: "10", unit: "개", label: "아이디어" },
+      { value: "7", unit: "개", label: "PoC" },
+      { value: "3", unit: "개", label: "서비스" },
     ],
   },
 };
@@ -59,7 +55,6 @@ export const serviceCtas = {
 export const tripditoContent: ServicePageContent = {
   hero: {
     title: "캡처해 둔 그 상품,\n여행지에서\n바로 찾으세요!",
-    // body: "이미지 한 장으로 상품을 찾고,\n쇼핑 리스트로 정리하고,\n현지 판매처까지 연결하는 여행 쇼핑 서비스",
     screens: [
       "/images/tripdito/visual/01.png",
       "/images/tripdito/visual/02.png",
@@ -162,6 +157,7 @@ export const tripditoContent: ServicePageContent = {
 /** 토리콩 카피 */
 export const torikongContent: ServicePageContent = {
   hero: {
+    title: "우리 아이만의\n특별한 이야기",
     screens: [
       "/images/torikong/visual/01.png",
       "/images/torikong/visual/02.png",
@@ -169,6 +165,51 @@ export const torikongContent: ServicePageContent = {
     device: "desktop",
     cta: serviceCtas.primary,
     ctaSecondary: serviceCtas.secondary,
+  },
+  background: {
+    name: serviceSectionNames.background,
+    title: "text",
+    items: [
+      { icon: "Share2", body: "text" },
+      { icon: "Search", body: "text" },
+      { icon: "Lightbulb", body: "text" },
+    ],
+  },
+  service: {
+    name: serviceSectionNames.service,
+    title: "text",
+    body: "text",
+    items: [
+      { icon: "Upload", step: "01", title: "text", body: "text" },
+      { icon: "ScanSearch", step: "02", title: "text", body: "text" },
+      { icon: "ListChecks", step: "03", title: "text", body: "text" },
+      { icon: "MapPin", step: "04", title: "text", body: "text" },
+    ],
+  },
+  highlight: {
+    name: serviceSectionNames.highlight,
+    title: "text",
+    items: [
+      { icon: "ImageIcon", title: "text", body: "text" },
+      { icon: "ListChecks", title: "text", body: "text" },
+      { icon: "MapPin", title: "text", body: "text" },
+      { icon: "Camera", title: "text", body: "text" },
+    ],
+  },
+  brand: {
+    name: serviceSectionNames.brand,
+    title: "text",
+    body: "text",
+    tokens: [
+      { label: "text", value: "text" },
+      { label: "text", value: "text" },
+      { label: "text", value: "text" },
+    ],
+  },
+  closing: {
+    title: "text",
+    body: "text",
+    cta: serviceCtas.primary,
   },
 };
 
@@ -183,6 +224,51 @@ export const ggparrotContent: ServicePageContent = {
     device: "desktop",
     cta: serviceCtas.primary,
     ctaSecondary: serviceCtas.secondary,
+  },
+  background: {
+    name: serviceSectionNames.background,
+    title: "text",
+    items: [
+      { icon: "Share2", body: "text" },
+      { icon: "Search", body: "text" },
+      { icon: "Lightbulb", body: "text" },
+    ],
+  },
+  service: {
+    name: serviceSectionNames.service,
+    title: "text",
+    body: "text",
+    items: [
+      { icon: "Upload", step: "01", title: "text", body: "text" },
+      { icon: "ScanSearch", step: "02", title: "text", body: "text" },
+      { icon: "ListChecks", step: "03", title: "text", body: "text" },
+      { icon: "MapPin", step: "04", title: "text", body: "text" },
+    ],
+  },
+  highlight: {
+    name: serviceSectionNames.highlight,
+    title: "text",
+    items: [
+      { icon: "ImageIcon", title: "text", body: "text" },
+      { icon: "ListChecks", title: "text", body: "text" },
+      { icon: "MapPin", title: "text", body: "text" },
+      { icon: "Camera", title: "text", body: "text" },
+    ],
+  },
+  brand: {
+    name: serviceSectionNames.brand,
+    title: "text",
+    body: "text",
+    tokens: [
+      { label: "text", value: "text" },
+      { label: "text", value: "text" },
+      { label: "text", value: "text" },
+    ],
+  },
+  closing: {
+    title: "text",
+    body: "text",
+    cta: serviceCtas.primary,
   },
 };
 

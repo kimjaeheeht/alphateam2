@@ -63,11 +63,6 @@ export default function ServicePage({
                   {hero.title}
                 </h1>
               ) : null}
-              {hero.body ? (
-                <p className="mt-6 max-w-xl whitespace-pre-line text-current/80 font-medium sm:text-lg">
-                  {hero.body}
-                </p>
-              ) : null}
               {hasHeroCta ? (
                 <div className="mt-10 sm:mt-16 flex flex-wrap gap-3">
                   {hero.cta ? (

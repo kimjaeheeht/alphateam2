@@ -9,6 +9,8 @@ type HeroCirclesProps = {
   opacities: [number, number, number];
   /** 첫 등장 시 벌어지며 나타나는 인트로. */
   animate?: boolean;
+  /** 좌우 원 간격(%). 0이면 가운데로 합쳐집니다. 기본 34. */
+  shift?: number;
 };
 
 const circleClass = [
@@ -22,13 +24,17 @@ export default function HeroCircles({
   color = "#ffffff",
   opacities,
   animate = false,
+  shift = 34,
 }: HeroCirclesProps) {
   return (
     <div
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 overflow-hidden"
     >
-      <div className={cn("hero-circles", animate && "hero-circles--intro")}>
+      <div
+        className={cn("hero-circles", animate && "hero-circles--intro")}
+        style={{ "--circle-shift": `${shift}%` } as CSSProperties}
+      >
         {opacities.map((opacity, index) => (
           <div
             key={circleClass[index]}

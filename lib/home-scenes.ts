@@ -7,9 +7,9 @@ const homeHeroColors = {
   /** 우상단 아이보리 */
   ivory: "#f3eee4",
   /** 우하단 스카이 */
-  sky: "rgb(123, 239, 247)",
+  sky: "rgb(152, 250, 242)",
   /** 중앙 화이트 워시 */
-  wash: "rgba(255, 255, 255, 0.52)",
+  wash: "rgba(255, 234, 211, 0.52)",
   /** 베이스 그라데이션 스톱 (핑크 → 라벤더 → 아이보리 → 연블루 → 시안) */
   base: ["#ffa3b8", "#eec4d8", "#ebe4d6", "#b5e4f2", "#78dcf0"] as const,
 };
@@ -34,31 +34,31 @@ function buildHeroFill(colors: HeroPalette) {
   ].join(", ");
 }
 
-/** 매니페스토 구간별 배경 — 01 핑크 / 02 아이보리·노랑 / 03 스카이 */
+/** 매니페스토 구간별 배경 — 01 로즈 / 02 피치·버터 / 03 스카이 */
 const manifestoPalettes: HeroPalette[] = [
   {
-    pink: "#ff6b92",
-    yellow: "rgba(255, 229, 144, 0.18)",
-    ivory: "#f7eef2",
-    sky: "rgba(123, 239, 247, 0.35)",
-    wash: "rgba(255, 255, 255, 0.4)",
-    base: ["#ff8aa8", "#f0b8cc", "#f0d6e0", "#d4e8f2", "#a8dce8"],
+    pink: "rgba(255, 96, 140, 0.55)",
+    yellow: "rgba(245, 180, 83, 0.35)",
+    ivory: "rgba(255, 244, 248, 0.95)",
+    sky: "rgba(243, 69, 38, 0.4)",
+    wash: "rgba(255, 216, 197, 0.5)",
+    base: ["#ff8eac", "#ffb3c4", "#ffe4ec", "#ffd0dc", "#f5b8cc"],
   },
   {
-    pink: "rgba(255, 133, 158, 0.45)",
-    yellow: "rgba(255, 220, 100, 0.55)",
-    ivory: "#f6f0e2",
-    sky: "rgba(123, 239, 247, 0.4)",
-    wash: "rgba(255, 255, 255, 0.48)",
-    base: ["#f0c4d0", "#edd8c0", "#f0e6c8", "#d8e8e0", "#b8dce8"],
+    pink: "rgba(191, 209, 90, 0.7)",
+    yellow: "rgba(255, 242, 128, 0.72)",
+    ivory: "rgba(255, 236, 200, 0.85)",
+    sky: "rgba(100, 200, 108, 0.65)",
+    wash: "rgba(255, 248, 230, 0.28)",
+    base: ["#ffb080", "#ffd078", "#f5e6c0", "#b8ddd0", "#8ecfc0"],
   },
   {
-    pink: "rgba(255, 133, 158, 0.4)",
-    yellow: "rgba(255, 229, 144, 0.2)",
-    ivory: "#eef6f7",
-    sky: "#5ee0f0",
-    wash: "rgba(255, 255, 255, 0.42)",
-    base: ["#e0c8d8", "#d4d8e8", "#d0e8f0", "#9edff0", "#6ad4e8"],
+    pink: "rgba(120, 170, 255, 0.45)",
+    yellow: "rgba(40, 240, 180, 0.4)",
+    ivory: "rgba(236, 250, 255, 0.7)",
+    sky: "rgba(8, 174, 224, 0.75)",
+    wash: "rgba(29, 243, 250, 0.22)",
+    base: ["#b8d4ff", "#a8e4f8", "#c4f2ee", "#7ed8f0", "#4ec4e8"],
   },
 ];
 
@@ -74,6 +74,6 @@ export const homeHero = {
   /** 원 3장(좌·중·우). color + opacities만 조절하면 됩니다. */
   circles: {
     color: "#ffffff",
-    opacities: [0.2, 0.3, 0.2] as [number, number, number],
+    opacities: [0.25, 0.3, 0.25] as [number, number, number],
   },
 };
