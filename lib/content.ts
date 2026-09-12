@@ -9,7 +9,7 @@ export const homeContent = {
       step: "01",
       icon: "Heart",
       title: "좋아하는 마음을,\n들여다봅니다.",
-      body: "사람들이 좋아하고, 다시 찾고, 나누는 순간에 주목합니다.",
+      body: "사람들이 좋아하고, 찾고, 나누는 순간에 주목합니다.",
     },
     {
       id: "m2",
@@ -28,6 +28,17 @@ export const homeContent = {
   ],
   projectsTitle: "서비스",
   projectsBody: "세 팀이 각자의 문제로 만든 서비스입니다.",
+  journey: {
+    name: "여정",
+    title: "숫자로 보는\n알파팀 2기",
+    body: "짧은 시간 동안 아이디어를 모으고, 끝까지 밀어붙여 세 개의 서비스로 남겼습니다.",
+    items: [
+      { value: "8", unit: "명", label: "함께한 팀원" },
+      { value: "2", unit: "개월", label: "도전한 기간" },
+      { value: "10", unit: "개", label: "나눈 아이디어" },
+      { value: "3", unit: "개", label: "만든 서비스" },
+    ],
+  },
 };
 
 /** 공통 섹션명 */
@@ -47,7 +58,7 @@ export const serviceCtas = {
 /** 트립디토 카피 */
 export const tripditoContent: ServicePageContent = {
   hero: {
-    title: "캡처해 둔 그 상품,\n여행지에서 바로 찾으세요!",
+    title: "캡처해 둔 그 상품,\n여행지에서\n바로 찾으세요!",
     // body: "이미지 한 장으로 상품을 찾고,\n쇼핑 리스트로 정리하고,\n현지 판매처까지 연결하는 여행 쇼핑 서비스",
     screens: [
       "/images/tripdito/visual/01.png",

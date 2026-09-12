@@ -2,10 +2,10 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import BrandImage from "@/components/brand/BrandImage";
-import HeroPlanes from "@/components/case/HeroPlanes";
+import HeroCircles from "@/components/case/HeroCircles";
 import Container from "@/components/layout/Container";
 import { homeContent } from "@/lib/content";
-import { heroPlanes, heroPlanesOnLight, projects } from "@/lib/projects";
+import { heroCircleOpacities, heroCircleOpacitiesOnLight, projects } from "@/lib/projects";
 
 export default function ProjectCards() {
   return (
@@ -28,9 +28,11 @@ export default function ProjectCards() {
                   className="relative flex h-20 w-28 shrink-0 items-center justify-center overflow-hidden md:h-auto md:w-full md:aspect-[16/10]"
                   style={{ background: project.accent }}
                 >
-                  <HeroPlanes
-                    layers={
-                      project.slug === "ggparrot" ? heroPlanesOnLight : heroPlanes
+                  <HeroCircles
+                    opacities={
+                      project.slug === "ggparrot"
+                        ? heroCircleOpacitiesOnLight
+                        : heroCircleOpacities
                     }
                   />
                   <BrandImage

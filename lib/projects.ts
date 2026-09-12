@@ -85,23 +85,17 @@ export const projects: Project[] = [
   },
 ];
 
-export const heroPlanes = [
-  "rgba(255,255,255,0.42)",
-  "rgba(255,255,255,0.26)",
-  "rgba(255,255,255,0.14)",
-] as [string, string, string];
+export const heroCircleOpacities = [0.28, 0.5, 0.28] as [
+  number,
+  number,
+  number,
+];
 
-export const heroPlanesOnLight = [
-  "rgba(255,255,255,0.48)",
-  "rgba(255,255,255,0.4)",
-  "rgba(255,255,255,0.36)",
-] as [string, string, string];
-
-export const heroPlanesHome = [
-  "rgba(255,255,255,0.56)",
-  "rgba(255,255,255,0.48)",
-  "rgba(255,255,255,0.44)",
-] as [string, string, string];
+export const heroCircleOpacitiesOnLight = [0.38, 0.55, 0.38] as [
+  number,
+  number,
+  number,
+];
 
 /** slug로 서비스 메타를 찾습니다. */
 export function getProject(slug: ProjectSlug) {

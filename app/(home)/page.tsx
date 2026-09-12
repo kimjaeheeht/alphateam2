@@ -1,12 +1,12 @@
 import HomeHero from "@/components/home/HomeHero";
-import HomeManifesto from "@/components/home/HomeManifesto";
+import HomeJourney from "@/components/home/HomeJourney";
 import ProjectCards from "@/components/home/ProjectCards";
 
 export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <HomeManifesto />
+      <HomeJourney />
       <ProjectCards />
     </>
   );

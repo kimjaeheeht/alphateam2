@@ -7,7 +7,7 @@ type ServiceHeadingProps = {
   align?: "center" | "left";
 };
 
-/** 섹션명 / 큰 제목 / 본문. 글자색은 부모 섹션의 color를 상속합니다. */
+/** ??? / ? ?? / ??. ???? ?? ??? color? ?????. */
 export default function ServiceHeading({
   name,
   title,
@@ -19,9 +19,7 @@ export default function ServiceHeading({
   return (
     <div className={cn(align === "center" && "mx-auto max-w-3xl text-center")}>
       {name ? (
-        <p className="text-sm font-medium uppercase tracking-[0.1em] text-current/50">
-          {name}
-        </p>
+        <p className="text-sm font-medium uppercase text-current/50">{name}</p>
       ) : null}
       {title ? (
         <h2
