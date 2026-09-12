@@ -9,7 +9,7 @@ export const homeContent = {
       step: "01",
       icon: "Heart",
       title: "좋아하는 마음을,\n들여다봅니다.",
-      body: "사람들이 좋아하고, 찾고, 나누는 순간에 주목합니다.",
+      body: "사람들이 좋아하고, 다시 찾고, 나누는 순간에 주목합니다.",
     },
     {
       id: "m2",
