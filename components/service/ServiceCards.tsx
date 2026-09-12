@@ -33,7 +33,7 @@ export default function ServiceCards({
 
         return (
           <li
-            key={`${item.title ?? item.body}-${index}`}
+            key={`${item.title ?? item.body ?? "item"}-${index}`}
             className={cn(
               "flex flex-col gap-6 rounded-3xl px-6 py-7 sm:rounded-4xl sm:px-8 sm:py-10",
               featured
@@ -49,48 +49,56 @@ export default function ServiceCards({
             )}
             style={featured ? { background: accent } : undefined}
           >
-            <div
-              className={cn(
-                "flex items-start gap-4",
-                item.step && "justify-between",
-                align === "center" && "justify-center",
-              )}
-            >
-              <span
+            {item.icon || item.step ? (
+              <div
                 className={cn(
-                  "inline-flex size-11 shrink-0 items-center justify-center rounded-2xl",
-                  featured
-                    ? lightAccent
-                      ? "bg-black/10 text-foreground"
-                      : "bg-white/20 text-white"
-                    : variant === "feature"
-                      ? "bg-white text-foreground"
-                      : "bg-surface text-foreground",
+                  "flex items-start gap-4",
+                  item.step && "justify-between",
+                  align === "center" && "justify-center",
                 )}
               >
-                <ServiceIcon name={item.icon} className="size-5" />
-              </span>
-              {item.step ? (
-                <span className="text-sm text-muted">{item.step}</span>
-              ) : null}
-            </div>
-            <div className="flex flex-col gap-2">
-              {item.title ? (
-                <h3 className="text-lg font-medium">{item.title}</h3>
-              ) : null}
-              <p
-                className={cn(
-                  "text-sm",
-                  featured
-                    ? lightAccent
-                      ? "text-foreground/70"
-                      : "text-white/90"
-                    : "text-muted",
-                )}
-              >
-                {item.body}
-              </p>
-            </div>
+                {item.icon ? (
+                  <span
+                    className={cn(
+                      "inline-flex size-11 shrink-0 items-center justify-center rounded-2xl",
+                      featured
+                        ? lightAccent
+                          ? "bg-black/10 text-foreground"
+                          : "bg-white/20 text-white"
+                        : variant === "feature"
+                          ? "bg-white text-foreground"
+                          : "bg-surface text-foreground",
+                    )}
+                  >
+                    <ServiceIcon name={item.icon} className="size-5" />
+                  </span>
+                ) : null}
+                {item.step ? (
+                  <span className="text-sm text-muted">{item.step}</span>
+                ) : null}
+              </div>
+            ) : null}
+            {item.title || item.body ? (
+              <div className="flex flex-col gap-2">
+                {item.title ? (
+                  <h3 className="text-lg font-medium">{item.title}</h3>
+                ) : null}
+                {item.body ? (
+                  <p
+                    className={cn(
+                      "text-sm",
+                      featured
+                        ? lightAccent
+                          ? "text-foreground/70"
+                          : "text-white/90"
+                        : "text-muted",
+                    )}
+                  >
+                    {item.body}
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
           </li>
         );
       })}

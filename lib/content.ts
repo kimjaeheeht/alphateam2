@@ -45,7 +45,7 @@ export const serviceCtas = {
 export const tripditoContent: ServicePageContent = {
   hero: {
     title: "캡처해 둔 그 상품,\n여행지에서 바로 찾으세요!",
-    body: "이미지 한 장으로 상품을 찾고, 쇼핑 리스트로 정리하고,\n현지 판매처까지 연결하는 여행 쇼핑 서비스",
+    // body: "이미지 한 장으로 상품을 찾고,\n쇼핑 리스트로 정리하고,\n현지 판매처까지 연결하는 여행 쇼핑 서비스",
     screen: "/images/tripdito/service-01.png",
     cta: serviceCtas.primary,
     ctaSecondary: serviceCtas.secondary,
@@ -146,7 +146,7 @@ const TEXT = "text";
 
 /** 토리콩·껄무새 기획용 플레이스홀더. 섹션명·CTA만 채우고 본문은 text입니다. */
 function placeholderContent(
-  hero?: Pick<ServicePageContent["hero"], "screen" | "screenSm" | "device">,
+  hero?: Pick<NonNullable<ServicePageContent["hero"]>, "screen" | "screenSm" | "device">,
 ): ServicePageContent {
   return {
     hero: {

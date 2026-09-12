@@ -1,8 +1,8 @@
 import { cn } from "@/lib/cn";
 
 type ServiceHeadingProps = {
-  name: string;
-  title: string;
+  name?: string;
+  title?: string;
   body?: string;
   align?: "center" | "left";
 };
@@ -14,14 +14,25 @@ export default function ServiceHeading({
   body,
   align = "center",
 }: ServiceHeadingProps) {
+  if (!name && !title && !body) return null;
+
   return (
     <div className={cn(align === "center" && "mx-auto max-w-3xl text-center")}>
-      <p className="text-sm font-medium uppercase tracking-[0.1em] text-current/50">
-        {name}
-      </p>
-      <h2 className="mt-5 whitespace-pre-line text-[clamp(1.75rem,4vw,2.75rem)] font-bold">
-        {title}
-      </h2>
+      {name ? (
+        <p className="text-sm font-medium uppercase tracking-[0.1em] text-current/50">
+          {name}
+        </p>
+      ) : null}
+      {title ? (
+        <h2
+          className={cn(
+            "whitespace-pre-line text-[clamp(1.75rem,4vw,2.75rem)] font-bold",
+            name ? "mt-5" : undefined,
+          )}
+        >
+          {title}
+        </h2>
+      ) : null}
       {body ? (
         <p
           className={cn(

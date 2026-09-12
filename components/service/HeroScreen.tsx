@@ -9,7 +9,7 @@ type HeroScreenProps = {
   priority?: boolean;
 };
 
-/** 히어로 우측 스크린샷. 하단은 섹션에 붙어 잘리도록 윗모서리만 둥급니다. */
+/** 히어로 우측 스크린샷. phone은 하단에 붙어 윗모서리만, desktop은 전체 라운드·16:9로 하단 크롭. */
 export default function HeroScreen({
   src,
   srcSm,
@@ -25,7 +25,7 @@ export default function HeroScreen({
       className={cn(
         "overflow-hidden bg-white shadow-[0_24px_80px_rgba(17,17,17,0.16)]",
         desktop
-          ? "aspect-[16/10] rounded-t-xl sm:rounded-t-2xl lg:aspect-[16/9]"
+          ? "aspect-[16/9] rounded-xl sm:rounded-2xl"
           : "rounded-t-2xl sm:rounded-t-4xl",
         className,
       )}
@@ -45,7 +45,7 @@ export default function HeroScreen({
           fetchPriority={priority ? "high" : "auto"}
           className={cn(
             "block w-full",
-            desktop && "h-full object-cover object-top",
+            desktop ? "h-full object-cover object-top" : "h-auto",
           )}
         />
       </picture>
