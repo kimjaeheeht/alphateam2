@@ -15,7 +15,6 @@ export type Project = {
   name: string;
   nameEn: string;
   tagline: string;
-  summary: string;
   href: `/${ProjectSlug}`;
   liveUrl: string;
   category: string;
@@ -32,9 +31,7 @@ export const projects: Project[] = [
     slug: "tripdito",
     name: "트립디토",
     nameEn: "TripDito",
-    tagline: "이미지 한 장으로, 여행 쇼핑",
-    summary:
-      "이미지 한 장으로 해외여행 쇼핑 리스트를 만들고, 현지 구매 동선을 잡아 줍니다.",
+    tagline: "이미지 한 장에서 시작되는 여행 쇼핑 경험",
     href: "/tripdito",
     liveUrl: "https://trip-shopping.vercel.app/",
     category: "여행 쇼핑",
@@ -53,8 +50,6 @@ export const projects: Project[] = [
     name: "토리콩",
     nameEn: "Torikong",
     tagline: "우리 아이만의 특별한 이야기",
-    summary:
-      "유아 교육 이야기에 쓸 캐릭터를 만들고, 에피소드 속에서도 같은 얼굴로 만나게 합니다.",
     href: "/torikong",
     liveUrl: "https://2607-tale-nest.vercel.app/",
     category: "에듀테크",
@@ -72,9 +67,7 @@ export const projects: Project[] = [
     slug: "ggparrot",
     name: "껄무새",
     nameEn: "GGPARROT",
-    tagline: "코린이도 쉽게 시작하는 코인 매크로",
-    summary:
-      "전략을 만들고 과거 데이터로 돌려본 뒤, 실거래 없이 모의로 익힙니다.",
+    tagline: "코린이도 쉽게 시작하는 코인 매매 전략",
     href: "/ggparrot",
     liveUrl: "https://gg-parrot.vercel.app/",
     category: "핀테크 교육",

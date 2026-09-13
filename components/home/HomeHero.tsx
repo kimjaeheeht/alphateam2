@@ -175,7 +175,7 @@ export default function HomeHero({ children }: HomeHeroProps) {
             <p className="absolute bottom-full left-1/2 mb-4 w-max -translate-x-1/2 text-base font-medium sm:mb-8 sm:text-xl">
               {homeHero.brand}
             </p>
-            <h1 className="whitespace-pre-line text-[clamp(2.35rem,9vw,6rem)] font-bold leading-[1.2]">
+            <h1 className="whitespace-pre-line text-[clamp(2.25rem,8vw,5.25rem)] font-bold leading-[1.2]">
               {homeHero.headline}
             </h1>
             <ChevronDown
@@ -234,7 +234,7 @@ export default function HomeHero({ children }: HomeHeroProps) {
                         {item.label}
                       </p>
                     </div>
-                    <p className="text-[clamp(2.35rem,6vw,3.75rem)] font-bold leading-[1.3]">
+                    <p className="text-[clamp(2.15rem,5.5vw,3.5rem)] font-bold leading-[1.3]">
                       {item.title}
                     </p>
                     <p className="mt-5 max-w-xl whitespace-pre-line text-foreground/60 sm:mt-8 sm:text-lg">

@@ -84,7 +84,7 @@ export const serviceCtas = {
   secondary: "서비스 소개",
 } as const;
 
-/** 홈 배너·클로징 본문 공통 문구 (projects.tagline) */
+/** 홈 카드·클로징 본문 공통 문구 (projects.tagline) */
 export function getProjectPitch(project: { tagline: string }) {
   return project.tagline;
 }
@@ -104,7 +104,7 @@ export function buildServiceClosing(project: {
 /** 트립디토 카피 */
 export const tripditoContent: ServicePageContent = {
   hero: {
-    title: "캡처해 둔 그 상품,\n여행지에서\n바로 찾으세요!",
+    title: "캡처해둔 쇼핑템,\n이제 여행지에서\n바로 찾으세요!",
     screens: [
       "/images/tripdito/visual/01.png",
       "/images/tripdito/visual/02.png",
@@ -114,76 +114,76 @@ export const tripditoContent: ServicePageContent = {
   },
   background: {
     name: serviceSectionNames.background,
-    title: "캡처만 해두고,\n현지에서 찾지 못해 포기",
+    title: "캡처만 해두고,\n정작 여행지에서는 찾지 못한 경험!",
     items: [
       {
         icon: "Share2",
-        body: "SNS, 유튜브, 블로그와 지인의 추천에서 마음에 드는 상품을 캡처해 두지만, 막상 여행지에 가면 상품명도, 판매처도 기억나지 않습니다.",
+        body: "SNS에서 캡처해 두고 막상 여행지에서는 까먹고 돌아와서 캐리어를 풀면 생각났던 순간",
       },
       {
         icon: "Search",
-        body: "쇼핑 리스트를 다시 만들고 검색하는 일은 번거롭고, 결국 사고 싶었던 상품을 놓치기도 합니다.",
+        body: "바쁜 현생 속에서 쇼핑리스트를 만드는 일이 번거롭다고 느낀 경험",
       },
       {
         icon: "Lightbulb",
-        body: "추천 상품을 이미지로 저장해 두고도 실제 여행지에서는 상품명이나 구매처를 찾기 어려워 구매로 연결되지 않는 경험.",
+        body: "미리 캡처한 이미지를 가져갔지만 정작 어디서 파는지 몰라 아까운 여행 시간만 낭비했던 기억",
       },
     ],
   },
   service: {
     name: serviceSectionNames.service,
-    title: "이미지 한 장으로,\n현지에서 바로",
-    body: "TripDito는 여행에서 사고 싶은 상품을 이미지 한 장으로 찾고,\n쇼핑 리스트로 정리한 뒤 현지 구매 동선까지 연결하는 여행 쇼핑 서비스입니다.",
+    title: "사진 한 장으로 끝내는 똑똑한 쇼핑 리스트 완성!",
+    body: "트립디토는 이미지 한 장이면 내 여행지에 맞춰 AI가 정보를 찾고,\n쇼핑 리스트로 만들어, 현지 구매까지 이어주는 서비스에요.",
     items: [
       {
         icon: "Upload",
         step: "01",
         title: "이미지 업로드",
-        body: "여행 전에 저장해 둔 상품 이미지를 업로드합니다.",
+        body: "사고 싶은 상품의 캡처 이미지를 업로드하세요.",
       },
       {
         icon: "ScanSearch",
         step: "02",
-        title: "AI 상품 정보 분석",
-        body: "상품명을 몰라도 AI가 상품 정보를 찾아 줍니다.",
+        title: "AI 상품 분석",
+        body: "AI가 이미지를 분석해 정확한 상품 정보를 찾아줘요.",
       },
       {
         icon: "ListChecks",
         step: "03",
         title: "쇼핑 리스트 저장",
-        body: "분석한 상품을 내 리스트에 바로 담습니다.",
+        body: "찾은 상품을 나만의 쇼핑 리스트에 쉽게 담아보세요.",
       },
       {
         icon: "MapPin",
         step: "04",
-        title: "현지 구매처 연결",
-        body: "현지에서 살 수 있는 구매처를 바로 연결합니다.",
+        title: "현지 판매처 연결",
+        body: "내 위치에서 가장 가까운 현지 매장을 표시해줘요.",
       },
     ],
   },
   highlight: {
     name: serviceSectionNames.highlight,
-    title: "여행 쇼핑의 번거로운 순간을\n하나씩 줄였습니다!",
+    title: "소중한 여행, 알차게 즐기세요!\n번거로운 과정은 트립디토가 줄였어요.",
     items: [
       {
         icon: "ImageIcon",
-        title: "디토 AI 사진 분석",
-        body: "상품명을 몰라도 이미지 한 장으로 상품 정보를 찾습니다.",
+        title: "AI 이미지 분석",
+        body: "상품명을 몰라도 이미지 한 장으로 디토 AI가 정보를 찾고",
       },
       {
         icon: "ListChecks",
-        title: "내 여행 리스트",
-        body: "여행지별로 쇼핑 리스트를 만들고, 다시 사용할 수 있습니다.",
+        title: "쇼핑 리스트",
+        body: "쇼핑 리스트를 만들고, 다음 여행에서도 또 사고싶은 상품을 재사용해요.",
       },
       {
         icon: "MapPin",
-        title: "주변 상점 MAP",
-        body: "아직 사지 않은 상품을 파는 가까운 상점을 지도에서 찾습니다.",
+        title: "주변 판매 지도",
+        body: "아직 사지 않은 상품을 파는 가까운 상점을 지도에 표시해줘요.",
       },
       {
         icon: "Camera",
-        title: "때샷 · 랭킹",
-        body: "다른 사람의 쇼핑 리스트를 보고 마음에 드는 상품을 내 리스트에 담습니다.",
+        title: "때샷 피드·랭킹",
+        body: "우리만의 쇼핑 트랜드 공유! 다른 사람의 쇼핑 리스트를 내 리스트에도 담기",
       },
     ],
   },
@@ -256,7 +256,7 @@ export const torikongContent: ServicePageContent = {
 /** 껄무새 카피 */
 export const ggparrotContent: ServicePageContent = {
   hero: {
-    title: "코린이도\n쉽게 시작하는\n코인 매크로",
+    title: "살껄 팔껄 후회 끝!\n만들고 겨루는\n 코인 전략 플랫폼",
     screens: [
       "/images/ggparrot/visual/01.png",
       "/images/ggparrot/visual/02.png",
