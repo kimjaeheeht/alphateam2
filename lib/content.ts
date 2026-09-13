@@ -132,7 +132,7 @@ export const tripditoContent: ServicePageContent = {
   },
   service: {
     name: serviceSectionNames.service,
-    title: "사진 한 장으로 끝내는 똑똑한 쇼핑 리스트 완성!",
+    title: "사진 한 장으로 끝내는\n똑똑한 쇼핑 리스트 완성!",
     body: "트립디토는 이미지 한 장이면 내 여행지에 맞춰 AI가 정보를 찾고,\n쇼핑 리스트로 만들어, 현지 구매까지 이어주는 서비스에요.",
     items: [
       {

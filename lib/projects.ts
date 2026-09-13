@@ -31,7 +31,7 @@ export const projects: Project[] = [
     slug: "tripdito",
     name: "트립디토",
     nameEn: "TripDito",
-    tagline: "이미지 한 장에서 시작되는 여행 쇼핑 경험",
+    tagline: "이미지 한 장에서 시작되는 여행 쇼핑",
     href: "/tripdito",
     liveUrl: "https://trip-shopping.vercel.app/",
     category: "여행 쇼핑",
