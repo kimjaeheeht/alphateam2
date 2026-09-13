@@ -63,11 +63,11 @@ export default function ServiceCards({
                       "inline-flex size-11 shrink-0 items-center justify-center rounded-2xl",
                       featured
                         ? lightAccent
-                          ? "bg-black/10 text-foreground"
-                          : "bg-white/20 text-white"
-                        : variant === "feature"
                           ? "bg-surface text-foreground"
-                          : "bg-white text-foreground",
+                          : "bg-white/20 text-white"
+                        : variant === "story"
+                          ? "bg-white text-foreground"
+                          : "bg-surface text-foreground",
                     )}
                   >
                     <ServiceIcon name={item.icon} className="size-5" />

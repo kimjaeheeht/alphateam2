@@ -220,7 +220,7 @@ export default function ServicePage({
                     {content.brand.tokens.map((token, index) => (
                       <div
                         key={`${token.label}-${index}`}
-                        className="flex items-baseline gap-8 border-t border-foreground/10 py-4 last:border-b"
+                        className="flex items-baseline gap-8 border-t border-foreground/15 py-4 last:border-b"
                       >
                         <dt className="w-18 sm:w-28 shrink-0 font-bold">{token.label}</dt>
                         <dd className="text-muted">{token.value}</dd>

@@ -22,7 +22,7 @@ export default function ProjectCards() {
               <Link
                 href={project.href}
                 aria-label={`${project.name} 자세히 보기`}
-                className="group flex h-full flex-col items-center gap-6 rounded-3xl bg-white px-6 py-7 text-center shadow-none transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(17,17,17,0.08)] sm:rounded-4xl sm:px-8 sm:py-10"
+                className="group flex h-full flex-col items-center gap-4 sm:gap-6 rounded-3xl bg-white px-6 py-7 text-center shadow-none transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(17,17,17,0.08)] sm:rounded-4xl sm:px-8 sm:py-10"
               >
                 <div className="flex h-12 items-center justify-center">
                   <BrandImage
