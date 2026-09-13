@@ -183,6 +183,7 @@ export const tripditoContent: ServicePageContent = {
 /** 토리콩 카피 */
 export const torikongContent: ServicePageContent = {
   hero: {
+    title: "우리 아이를 위한\n교육 콘텐츠,\n이제 직접 만들어요!",
     screens: [
       "/images/torikong/visual/01.png",
       "/images/torikong/visual/02.png",
@@ -236,6 +237,7 @@ export const torikongContent: ServicePageContent = {
 /** 껄무새 카피 */
 export const ggparrotContent: ServicePageContent = {
   hero: {
+    title: "코린이도\n쉽게 시작하는\n코인 매크로",
     screens: [
       "/images/ggparrot/visual/01.png",
       "/images/ggparrot/visual/02.png",

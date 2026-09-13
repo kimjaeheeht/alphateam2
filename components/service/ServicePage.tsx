@@ -61,14 +61,14 @@ export default function ServicePage({
           >
             {/* 텍스트 영역 */}
             <div className="relative z-10 flex w-full flex-col justify-center">
-              <Logo project={project} onDark={!lightAccent} className="h-12" priority />
+              <Logo project={project} onDark={!lightAccent} className="h-10 sm:h-12" priority />
               {heroTitle ? (
                 <h1 className="mt-6 whitespace-pre-line text-[clamp(2rem,5vw,4rem)] font-bold">
                   {heroTitle}
                 </h1>
               ) : null}
               {hasHeroCta ? (
-                <div className="mt-10 sm:mt-16 flex flex-wrap gap-3">
+                <div className="mt-6 sm:mt-12 flex flex-wrap gap-3">
                   {hero.cta ? (
                     <Button
                       href={project.liveUrl}

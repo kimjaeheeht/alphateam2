@@ -42,7 +42,7 @@ export default function Header() {
               href={item.href}
               className={
                 isActive(pathname, item.href)
-                  ? "text-foreground"
+                  ? "text-foreground font-semibold"
                   : "text-muted transition-colors hover:text-foreground"
               }
             >
@@ -74,7 +74,7 @@ export default function Header() {
                   href={item.href}
                   className={`block py-2 text-sm ${
                     isActive(pathname, item.href)
-                      ? "text-foreground"
+                      ? "text-foreground font-semibold"
                       : "text-muted"
                   }`}
                   onClick={() => setOpen(false)}
