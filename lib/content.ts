@@ -1,37 +1,40 @@
 import type { ProjectSlug } from "@/lib/projects";
 import type { ServicePageContent } from "@/lib/service-page";
 
-/** 홈 매니페스토·서비스 목록 카피 */
+/** 홈 PHILOSOPHY·진행 과정·서비스 목록 카피 */
 export const homeContent = {
-  manifesto: [
-    {
-      id: "m1",
-      step: "01",
-      icon: "Heart",
-      title: "좋아하는 마음을\n들여다봅니다.",
-      body: "사람들이 좋아하고, 찾고, 나누는 순간에 주목합니다.",
-    },
-    {
-      id: "m2",
-      step: "02",
-      icon: "RefreshCw",
-      title: "익숙한 일상을\n다르게 바라봅니다.",
-      body: "반복되는 행동과 무심코 지나친 불편을 다시 바라봅니다.",
-    },
-    {
-      id: "m3",
-      step: "03",
-      icon: "Rocket",
-      title: "작은 생각을\n끝까지 이어갑니다.",
-      body: "생각에 머물지 않고, 사람들에게 닿는 경험으로 이어갑니다.",
-    },
-  ],
+  philosophy: {
+    name: "PHILOSOPHY",
+    items: [
+      {
+        id: "m1",
+        step: "01",
+        label: "마음",
+        title: "좋아하는 마음을 들여다봅니다.",
+        body: "사람들이 좋아하고, 찾고, 나누는 순간에 주목합니다.",
+      },
+      {
+        id: "m2",
+        step: "02",
+        label: "시선",
+        title: "익숙한 일상을 다르게 바라봅니다.",
+        body: "반복되는 행동과 무심코 지나친 불편을 다시 바라봅니다.",
+      },
+      {
+        id: "m3",
+        step: "03",
+        label: "경험",
+        title: "작은 생각을 끝까지 이어갑니다.",
+        body: "생각에 머물지 않고, 사람들에게 닿는 경험으로 이어갑니다.",
+      },
+    ],
+  },
   journey: {
     name: "진행 과정",
     title: "아이디어에서 서비스까지",
     items: [
       {
-        value: "10",
+        value: "10+",
         label: "아이디어 발굴",
         body: "다양한 아이디어 제안",
       },

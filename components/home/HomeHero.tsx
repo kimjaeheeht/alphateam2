@@ -8,7 +8,7 @@ import { cn } from "@/lib/cn";
 import { homeContent } from "@/lib/content";
 import { homeHero } from "@/lib/home-scenes";
 
-const MANIFESTO = homeContent.manifesto;
+const PHILOSOPHY = homeContent.philosophy;
 
 function smoothstep(edge0: number, edge1: number, x: number) {
   const t = Math.min(1, Math.max(0, (x - edge0) / (edge1 - edge0)));
@@ -16,7 +16,7 @@ function smoothstep(edge0: number, edge1: number, x: number) {
 }
 
 /** 구간별 불투명도. fadeRatio가 클수록 전환·상승이 더 천천히 이어집니다. */
-function manifestoOpacity(
+function philosophyOpacity(
   progress: number,
   index: number,
   count: number,
@@ -38,7 +38,7 @@ type HomeHeroProps = {
   children?: ReactNode;
 };
 
-/** 히어로 고정 + 스크롤 문구 교차. children은 스티키 히어로를 덮고 올라옵니다. */
+/** 히어로 고정 + PHILOSOPHY 스크롤 문구 교차. children은 스티키 히어로를 덮고 올라옵니다. */
 export default function HomeHero({ children }: HomeHeroProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const spacerRef = useRef<HTMLDivElement>(null);
@@ -88,116 +88,86 @@ export default function HomeHero({ children }: HomeHeroProps) {
     };
   }, []);
 
-  const fadeRatio = narrow ? 0.28 : 0.12;
-  const risePx = narrow ? 36 : 48;
-  const heroOpacity = reduced ? 1 : 1 - smoothstep(0.05, 0.18, progress);
-  const manifestoGate = reduced
-    ? 0
-    : smoothstep(narrow ? 0.12 : 0.14, narrow ? 0.36 : 0.26, progress);
-  const manifestoProgress = reduced
-    ? 0
-    : Math.min(1, Math.max(0, (progress - 0.18) / 0.82));
-  const activeIndex = Math.min(
-    MANIFESTO.length - 1,
-    Math.floor(manifestoProgress * MANIFESTO.length + 1e-6),
+  /** reduced면 페이드·상승을 거의 끄고, 같은 마크업으로만 전환합니다. */
+  const fadeRatio = reduced ? 0.02 : narrow ? 0.28 : 0.12;
+  const risePx = reduced ? 0 : narrow ? 36 : 48;
+  const heroOpacity = 1 - smoothstep(0.05, reduced ? 0.08 : 0.18, progress);
+  const philosophyGate = smoothstep(
+    narrow ? 0.12 : 0.14,
+    reduced ? (narrow ? 0.2 : 0.18) : narrow ? 0.36 : 0.26,
+    progress,
   );
-  /** 후반 스크롤에서 좌·우 원이 가운데로 모입니다. */
-  const circleShift = 34 * (1 - smoothstep(0.58, 0.92, progress));
-
-  if (reduced) {
-    return (
-      <>
-        <section
-          className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center overflow-hidden"
-          style={{ background: homeHero.fill, color: homeHero.foreground }}
-        >
-          <HeroCircles
-            color={homeHero.circles.color}
-            opacities={homeHero.circles.opacities}
-          />
-          <div className="relative z-10 px-6 text-center sm:px-8">
-            <p className="mb-4 text-base font-medium sm:mb-8 sm:text-xl">
-              {homeHero.brand}
-            </p>
-            <h1 className="whitespace-pre-line text-[clamp(2.35rem,9vw,6rem)] font-bold leading-[1.2]">
-              {homeHero.headline}
-            </h1>
-          </div>
-        </section>
-        <section className="bg-surface py-20 sm:py-28" aria-label="매니페스토">
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:px-8 md:grid-cols-3">
-            {MANIFESTO.map((item) => (
-              <div key={item.id} className="text-center md:text-left">
-                <p className="mb-3 text-sm font-medium text-muted sm:mb-6">
-                  {item.step}
-                </p>
-                <p className="whitespace-pre-line text-3xl font-bold leading-[1.2] sm:text-4xl">
-                  {item.title}
-                </p>
-                <p className="mt-4 whitespace-pre-line text-base text-muted sm:mt-8 sm:text-xl">
-                  {item.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-        {children}
-      </>
-    );
-  }
+  const philosophyProgress = Math.min(1, Math.max(0, (progress - 0.18) / 0.82));
+  const activeIndex = Math.min(
+    PHILOSOPHY.items.length - 1,
+    Math.floor(philosophyProgress * PHILOSOPHY.items.length + 1e-6),
+  );
+  const circleShift = reduced
+    ? 34
+    : 34 * (1 - smoothstep(0.58, 0.92, progress));
 
   return (
     <div ref={trackRef} className="relative">
       <section
         className="sticky top-16 z-0 flex h-[calc(100svh-4rem)] flex-col items-center justify-center overflow-hidden"
         style={{ color: homeHero.foreground }}
+        aria-label={PHILOSOPHY.name}
       >
         <div
           className="absolute inset-0"
           style={{
             background: homeHero.fill,
-            opacity: 1 - manifestoGate,
+            opacity: 1 - philosophyGate,
           }}
           aria-hidden="true"
         />
-        {/* 매니페스토 전환 중 비침 방지용 단색 베이스 */}
-        <div
-          className="absolute inset-0 bg-white"
-          style={{ opacity: manifestoGate }}
-          aria-hidden="true"
-        />
-        {homeHero.manifestoFills.map((fill, index) => {
-          const local = manifestoOpacity(
-            manifestoProgress,
+
+        {/* PHILOSOPHY — 파스텔 단색 배경 */}
+        {PHILOSOPHY.items.map((item, index) => {
+          const scene = homeHero.philosophyScenes[index];
+          const local = philosophyOpacity(
+            philosophyProgress,
             index,
-            MANIFESTO.length,
+            PHILOSOPHY.items.length,
             fadeRatio,
           );
+
           return (
             <div
-              key={`bg-${MANIFESTO[index].id}`}
+              key={`bg-${item.id}`}
               className="absolute inset-0"
               style={{
-                background: fill,
-                opacity: local * manifestoGate,
+                background: scene.fill,
+                opacity: local * philosophyGate,
               }}
               aria-hidden="true"
             />
           );
         })}
 
-        <HeroCircles
-          animate
-          color={homeHero.circles.color}
-          opacities={homeHero.circles.opacities}
-          shift={circleShift}
-        />
+        <div
+          className="absolute inset-0 origin-center will-change-transform"
+          style={{
+            opacity: 1 - philosophyGate,
+            transform: `scale(${1 - philosophyGate * 0.42})`,
+          }}
+          aria-hidden="true"
+        >
+          <HeroCircles
+            animate={!reduced}
+            color={homeHero.circles.color}
+            opacities={homeHero.circles.opacities}
+            shift={circleShift}
+          />
+        </div>
 
         <div
           className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center will-change-transform sm:px-8"
           style={{
             opacity: heroOpacity,
-            transform: `translateY(${(1 - heroOpacity) * -40}px)`,
+            transform: reduced
+              ? undefined
+              : `translateY(${(1 - heroOpacity) * -40}px)`,
           }}
           aria-hidden={heroOpacity < 0.12}
         >
@@ -218,36 +188,59 @@ export default function HomeHero({ children }: HomeHeroProps) {
 
         <div className="absolute inset-0 z-10 px-6 sm:px-8">
           <div className="relative flex h-full w-full items-center justify-center">
-            {MANIFESTO.map((item, index) => {
-              const local = manifestoOpacity(
-                manifestoProgress,
+            {PHILOSOPHY.items.map((item, index) => {
+              const scene = homeHero.philosophyScenes[index];
+              const local = philosophyOpacity(
+                philosophyProgress,
                 index,
-                MANIFESTO.length,
+                PHILOSOPHY.items.length,
                 fadeRatio,
               );
-              const opacity = local * manifestoGate;
+              const opacity = local * philosophyGate;
               const visible = opacity > 0.02;
 
               return (
                 <div
                   key={item.id}
-                  className="absolute flex w-full max-w-4xl flex-col items-center text-center will-change-transform"
+                  className="absolute flex w-full max-w-6xl flex-col items-center text-center will-change-transform"
                   style={{
                     opacity,
-                    transform: `translateY(${(1 - local) * risePx}px)`,
+                    transform: risePx
+                      ? `translateY(${(1 - local) * risePx}px)`
+                      : undefined,
                     pointerEvents: visible ? "auto" : "none",
                   }}
                   aria-hidden={!visible || opacity < 0.5}
                 >
-                  <p className="mb-3 text-sm font-medium text-current/45 sm:mb-8 sm:text-base">
-                    {item.step}
-                  </p>
-                  <p className="whitespace-pre-line text-[clamp(2.35rem,7vw,4.75rem)] font-bold leading-[1.2]">
-                    {item.title}
-                  </p>
-                  <p className="mt-4 max-w-2xl whitespace-pre-line text-base text-current/70 sm:mt-12 sm:text-xl">
-                    {item.body}
-                  </p>
+                  <div
+                    className="pointer-events-none absolute top-3.5 left-1/2 w-[28vw] max-w-[12rem] -translate-x-1/2 -translate-y-1/2 aspect-square sm:top-4"
+                    aria-hidden="true"
+                  >
+                    <div
+                      className="absolute top-0 left-[-22%] size-full rounded-full"
+                      style={{ background: scene.circles[0] }}
+                    />
+                    <div
+                      className="absolute top-0 left-[22%] size-full rounded-full"
+                      style={{ background: scene.circles[1] }}
+                    />
+                  </div>
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="mb-8 flex items-center gap-2.5 sm:mb-10">
+                      <span className="flex size-7 items-center justify-center rounded-full bg-foreground text-[10px] font-bold text-white sm:size-8 sm:text-[11px]">
+                        {item.step}
+                      </span>
+                      <p className="text-sm font-medium text-foreground sm:text-lg">
+                        {item.label}
+                      </p>
+                    </div>
+                    <p className="text-[clamp(2.35rem,6vw,3.75rem)] font-bold leading-[1.3]">
+                      {item.title}
+                    </p>
+                    <p className="mt-5 max-w-xl whitespace-pre-line text-foreground/60 sm:mt-8 sm:text-lg">
+                      {item.body}
+                    </p>
+                  </div>
                 </div>
               );
             })}
@@ -256,15 +249,15 @@ export default function HomeHero({ children }: HomeHeroProps) {
 
         <div
           className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2 transition-opacity duration-300"
-          style={{ opacity: manifestoGate }}
+          style={{ opacity: philosophyGate }}
           aria-hidden="true"
         >
-          {MANIFESTO.map((item, index) => (
+          {PHILOSOPHY.items.map((item, index) => (
             <span
               key={item.id}
               className={cn(
                 "h-1.5 rounded-full transition-[width,background-color] duration-300",
-                index === activeIndex && manifestoGate > 0.4
+                index === activeIndex && philosophyGate > 0.4
                   ? "w-6 bg-foreground/70"
                   : "w-1.5 bg-foreground/25",
               )}
@@ -273,7 +266,7 @@ export default function HomeHero({ children }: HomeHeroProps) {
         </div>
       </section>
 
-      {/* 매니페스토 스크롤 거리 — 이 구간 동안 히어로가 고정됩니다 */}
+      {/* PHILOSOPHY 스크롤 거리 — 이 구간 동안 히어로가 고정됩니다 */}
       <div
         ref={spacerRef}
         className="pointer-events-none h-[440vh] sm:h-[360vh]"
