@@ -26,7 +26,7 @@ export default function HomeJourney() {
               className="pointer-events-none absolute top-20 right-[16.666%] left-[16.666%] hidden h-px -translate-y-1/2 bg-foreground/15 sm:block lg:top-[6.5rem]"
             />
 
-            <ul className="relative flex flex-col gap-8 sm:grid sm:grid-cols-3 sm:gap-8">
+            <ul className="relative flex flex-col gap-4 sm:grid sm:grid-cols-3 sm:gap-8">
               {journey.items.map((item, index) => {
                 const isLast = index === journey.items.length - 1;
 
@@ -39,7 +39,7 @@ export default function HomeJourney() {
                       {!isLast ? (
                         <div
                           aria-hidden
-                          className="absolute top-full left-1/2 h-8 w-px -translate-x-1/2 bg-transparent sm:hidden"
+                          className="absolute top-full left-1/2 h-8 w-px -translate-x-1/2 bg-foreground/15 sm:hidden"
                         />
                       ) : null}
                       <div

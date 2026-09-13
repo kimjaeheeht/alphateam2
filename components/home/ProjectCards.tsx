@@ -9,7 +9,7 @@ import { projects } from "@/lib/projects";
 
 export default function ProjectCards() {
   return (
-    <section className="bg-surface-fresh py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <Container>
         <ServiceHeading
           name={homeContent.projectsName}

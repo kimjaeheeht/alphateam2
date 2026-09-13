@@ -5,7 +5,8 @@
   --background: #ffffff;
   --foreground: #111111;
   --muted: #666666;
-  --surface: #f0f1f3;
+  /* --surface: #f0f1f3; */
+  --surface: #F1F3F8;
   /** 홈 서비스 소개 섹션 — 상큼한 스카이 */
   --surface-fresh: #e8f3ff;
   --accent: #111111;
