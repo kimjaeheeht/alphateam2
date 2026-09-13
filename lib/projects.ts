@@ -41,6 +41,7 @@ export const projects: Project[] = [
     accent: "#3182F6",
     secondary: "#62CBFF",
     onAccent: "#ffffff",
+    heroFill: "#e8f3ff",
     assets: {
       logo: "/images/tripdito/logo.svg",
       logoOnDark: "/images/tripdito/logo-white.svg",

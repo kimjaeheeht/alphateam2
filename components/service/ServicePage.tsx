@@ -25,16 +25,18 @@ export default function ServicePage({
   const desktopScreen = hero?.device === "desktop";
   // onAccent가 흰색이 아니면 노란 껄무새처럼 밝은 포인트 컬러로 보고 글자·버튼을 검게 둡니다.
   const lightAccent = project.onAccent.toLowerCase() !== "#ffffff";
-  // 토리콩처럼 히어로만 연한 브랜드 배경을 쓰는 경우
+  // 연한 브랜드 배경(트립디토·토리콩)에서는 글자·로고·버튼을 다크로 둡니다.
   const lightHero = Boolean(project.heroFill);
   const heroFill = project.heroFill ?? project.accent;
   const heroColor = lightHero ? "#111111" : project.onAccent;
   const heroCircles =
     project.slug === "ggparrot"
-      ? (["bg-white/20", "bg-white/35"] as const)
-      : project.slug === "torikong"
-        ? (["bg-accent/5", "bg-accent/[0.08]"] as const)
-        : (["bg-white/5", "bg-white/10"] as const);
+      ? (["bg-white/25", "bg-white/30"] as const)
+      : project.slug === "tripdito"
+        ? (["bg-accent/6", "bg-accent/9"] as const)
+        : lightHero
+          ? (["bg-accent/5", "bg-accent/[0.08]"] as const)
+          : (["bg-white/5", "bg-white/10"] as const);
   const hasHeroCta = Boolean(hero?.cta || hero?.ctaSecondary);
   const closing = buildServiceClosing(project);
   /** 히어로 제목 미입력 시 홈 배너·클로징과 같은 피치 문구 사용 */
@@ -207,7 +209,7 @@ export default function ServicePage({
               aside={<Logo project={project} className="h-12 shrink-0 sm:h-16" />}
             />
             {content.brand.body || content.brand.tokens?.length ? (
-              <div className="mt-10 grid items-end gap-12 lg:grid-cols-2">
+              <div className="mt-10 grid items-center gap-12 lg:grid-cols-2">
                 {content.brand.body ? (
                   <p className="max-w-xl whitespace-pre-line text-muted">
                     {content.brand.body}
@@ -220,7 +222,7 @@ export default function ServicePage({
                         key={`${token.label}-${index}`}
                         className="flex items-baseline gap-8 border-t border-foreground/10 py-4 last:border-b"
                       >
-                        <dt className="w-20 shrink-0 font-bold">{token.label}</dt>
+                        <dt className="w-18 sm:w-28 shrink-0 font-bold">{token.label}</dt>
                         <dd className="text-muted">{token.value}</dd>
                       </div>
                     ))}

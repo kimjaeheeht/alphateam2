@@ -44,7 +44,7 @@ export default function HomeJourney() {
                       ) : null}
                       <div
                         className={cn(
-                          "relative z-10 flex size-[5.5rem] sm:size-[10rem] lg:size-[13rem] items-center justify-center rounded-full bg-surface border sm:border-2",
+                          "relative z-10 flex size-[5.5rem] sm:size-[10rem] lg:size-[13rem] items-center justify-center rounded-full bg-surface-fresh border sm:border-2",
                           isLast
                             ? "border-foreground"
                             : "border-transparent",
