@@ -41,10 +41,10 @@ export default function ServiceCards({
                   ? "text-foreground"
                   : "text-white"
                 : variant === "feature"
-                  ? "bg-surface"
+                  ? "bg-white"
                   : variant === "highlight"
                     ? "bg-white text-foreground shadow-[0_12px_40px_rgba(17,17,17,0.08)]"
-                    : "bg-white",
+                    : "bg-surface",
               align === "center" && "text-center",
             )}
             style={featured ? { background: accent } : undefined}
@@ -66,8 +66,8 @@ export default function ServiceCards({
                           ? "bg-black/10 text-foreground"
                           : "bg-white/20 text-white"
                         : variant === "feature"
-                          ? "bg-white text-foreground"
-                          : "bg-surface text-foreground",
+                          ? "bg-surface text-foreground"
+                          : "bg-white text-foreground",
                     )}
                   >
                     <ServiceIcon name={item.icon} className="size-5" />

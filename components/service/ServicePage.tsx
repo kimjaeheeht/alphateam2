@@ -25,6 +25,16 @@ export default function ServicePage({
   const desktopScreen = hero?.device === "desktop";
   // onAccent가 흰색이 아니면 노란 껄무새처럼 밝은 포인트 컬러로 보고 글자·버튼을 검게 둡니다.
   const lightAccent = project.onAccent.toLowerCase() !== "#ffffff";
+  // 토리콩처럼 히어로만 연한 브랜드 배경을 쓰는 경우
+  const lightHero = Boolean(project.heroFill);
+  const heroFill = project.heroFill ?? project.accent;
+  const heroColor = lightHero ? "#111111" : project.onAccent;
+  const heroCircles =
+    project.slug === "ggparrot"
+      ? (["bg-white/20", "bg-white/35"] as const)
+      : project.slug === "torikong"
+        ? (["bg-accent/5", "bg-accent/[0.08]"] as const)
+        : (["bg-white/5", "bg-white/10"] as const);
   const hasHeroCta = Boolean(hero?.cta || hero?.ctaSecondary);
   const closing = buildServiceClosing(project);
   /** 히어로 제목 미입력 시 홈 배너·클로징과 같은 피치 문구 사용 */
@@ -37,17 +47,23 @@ export default function ServicePage({
         <section
           className="relative overflow-hidden"
           style={{
-            background: `linear-gradient(125deg, ${project.accent} 40%, ${project.secondary} 90%)`,
-            color: project.onAccent,
+            background: heroFill,
+            color: heroColor,
           }}
         >
           {/* 배경 도형 */}
           <div
-            className="pointer-events-none absolute -left-16 -top-10 size-[220px] rounded-full bg-white/10 sm:-left-24 sm:-top-16 sm:size-[360px] lg:-left-32 lg:top-[-20%] lg:size-[520px]"
+            className={cn(
+              "pointer-events-none absolute -left-16 -top-10 size-[220px] rounded-full sm:-left-24 sm:-top-16 sm:size-[360px] lg:-left-32 lg:top-[-20%] lg:size-[520px]",
+              heroCircles[0],
+            )}
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute -right-12 top-1/2 size-[260px] -translate-y-1/2 rounded-full bg-white/20 sm:-right-14 sm:size-[420px] lg:-right-16 lg:size-[640px]"
+            className={cn(
+              "pointer-events-none absolute -right-12 top-1/2 size-[260px] -translate-y-1/2 rounded-full sm:-right-14 sm:size-[420px] lg:-right-16 lg:size-[640px]",
+              heroCircles[1],
+            )}
             aria-hidden="true"
           />
 
@@ -61,7 +77,7 @@ export default function ServicePage({
           >
             {/* 텍스트 영역 */}
             <div className="relative z-10 flex w-full flex-col justify-center">
-              <Logo project={project} onDark={!lightAccent} className="h-10 sm:h-12" priority />
+              <Logo project={project} onDark={!lightAccent && !lightHero} className="h-10 sm:h-12" priority />
               {heroTitle ? (
                 <h1 className="mt-6 whitespace-pre-line text-[clamp(2rem,5vw,4rem)] font-bold">
                   {heroTitle}
@@ -72,7 +88,7 @@ export default function ServicePage({
                   {hero.cta ? (
                     <Button
                       href={project.liveUrl}
-                      variant={lightAccent ? "solid" : "solid-white"}
+                      variant={lightHero ? "solid-accent" : lightAccent ? "solid" : "solid-white"}
                       external
                     >
                       {hero.cta}
@@ -82,7 +98,7 @@ export default function ServicePage({
                   {hero.ctaSecondary ? (
                     <Button
                       href={`#${serviceId}`}
-                      variant={lightAccent ? "outline" : "outline-white"}
+                      variant={lightHero ? "outline-accent" : lightAccent ? "outline" : "outline-white"}
                     >
                       {hero.ctaSecondary}
                     </Button>
@@ -118,7 +134,7 @@ export default function ServicePage({
 
       {/* 섹션 - 기획 배경 */}
       {content.background ? (
-        <section className="bg-surface py-20 sm:py-28">
+        <section className="bg-white py-20 sm:py-28">
           <Container>
             <ServiceHeading
               name={content.background.name}
@@ -139,7 +155,7 @@ export default function ServicePage({
 
       {/* 섹션 - 서비스 소개 */}
       {content.service ? (
-        <section id={serviceId} className="py-20 sm:py-28">
+        <section id={serviceId} className="bg-surface py-20 sm:py-28">
           <Container>
             <ServiceHeading
               name={content.service.name}
@@ -184,16 +200,12 @@ export default function ServicePage({
       {content.brand ? (
         <section className="bg-white py-20 sm:py-28">
           <Container>
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-              {/* 제목 */}
-              <ServiceHeading
-                name={content.brand.name}
-                title={content.brand.title}
-                align="left"
-              />
-              {/* 로고 */}
-              <Logo project={project} />
-            </div>
+            <ServiceHeading
+              name={content.brand.name}
+              title={content.brand.title}
+              align="left"
+              aside={<Logo project={project} className="h-12 shrink-0 sm:h-16" />}
+            />
             {content.brand.body || content.brand.tokens?.length ? (
               <div className="mt-10 grid items-end gap-12 lg:grid-cols-2">
                 {content.brand.body ? (

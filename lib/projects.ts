@@ -22,6 +22,8 @@ export type Project = {
   accent: string;
   secondary: string;
   onAccent: string;
+  /** 히어로 배경. 없으면 accent 단색 */
+  heroFill?: string;
   assets: BrandAssets;
 };
 
@@ -58,6 +60,7 @@ export const projects: Project[] = [
     accent: "#FF6087",
     secondary: "#FFBEC7",
     onAccent: "#ffffff",
+    heroFill: "#FEF2F4",
     assets: {
       logo: "/images/torikong/logo.svg",
       logoOnDark: "/images/torikong/logo-white.svg",

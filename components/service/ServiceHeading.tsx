@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/cn";
 
 type ServiceHeadingProps = {
@@ -6,6 +8,8 @@ type ServiceHeadingProps = {
   body?: string;
   align?: "center" | "left";
   titleId?: string;
+  /** ??? ?(????) / ??(???)? ?? ?? ?? */
+  aside?: ReactNode;
 };
 
 /** ??? / ? ?? / ??. ???? ?? ??? color? ?????. */
@@ -15,24 +19,38 @@ export default function ServiceHeading({
   body,
   align = "center",
   titleId,
+  aside,
 }: ServiceHeadingProps) {
-  if (!name && !title && !body) return null;
+  if (!name && !title && !body && !aside) return null;
+
+  const heading = title ? (
+    <h2
+      id={titleId}
+      className="whitespace-pre-line text-[clamp(1.75rem,4vw,2.75rem)] font-bold"
+    >
+      {title}
+    </h2>
+  ) : null;
 
   return (
     <div className={cn(align === "center" && "mx-auto max-w-3xl text-center")}>
       {name ? (
         <p className="text-sm font-medium text-current/50">{name}</p>
       ) : null}
-      {title ? (
-        <h2
-          id={titleId}
+      {aside && heading ? (
+        <div
           className={cn(
-            "whitespace-pre-line text-[clamp(1.75rem,4vw,2.75rem)] font-bold",
+            "flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between",
             name ? "mt-5" : undefined,
           )}
         >
-          {title}
-        </h2>
+          {heading}
+          {aside}
+        </div>
+      ) : heading ? (
+        <div className={name ? "mt-5" : undefined}>{heading}</div>
+      ) : aside ? (
+        aside
       ) : null}
       {body ? (
         <p

@@ -6,6 +6,8 @@ const variants = {
     "border-white bg-transparent text-white hover:bg-white/10",
   outline:
     "border-foreground bg-transparent text-foreground hover:bg-black/5",
+  "outline-accent":
+    "border-accent bg-transparent text-accent hover:bg-accent/10",
   "solid-white":
     "border-white bg-white text-accent hover:opacity-90",
   "solid-accent":

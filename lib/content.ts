@@ -243,12 +243,12 @@ export const torikongContent: ServicePageContent = {
   },
   brand: {
     name: serviceSectionNames.brand,
-    title: "text",
-    body: "text",
+    title: "작은 이야기의 씨앗이,\n토리콩으로 자랍니다.",
+    body: "‘스토리(Story)’의 토리와 작고 친근한 이미지의 콩을 결합해\n아이들이 쉽게 부르고 기억할 수 있는 이름을 만들었습니다.\n\n작은 씨앗에서 새싹이 자라듯 하나의 이야기가 시작되는 모습을 담아,\n둥글고 부드러운 형태와 새싹 캐릭터로 친근하게 표현했습니다.",
     tokens: [
-      { label: "text", value: "text" },
-      { label: "text", value: "text" },
-      { label: "text", value: "text" },
+      { label: "토리", value: "Story에서 가져온 이야기의 의미" },
+      { label: "콩", value: "작고 친근한 씨앗에서 시작되는 이미지" },
+      { label: "새싹", value: "작은 이야기가 자라고 확장되는 모습을 상징" },
     ],
   },
 };
@@ -297,12 +297,12 @@ export const ggparrotContent: ServicePageContent = {
   },
   brand: {
     name: serviceSectionNames.brand,
-    title: "text",
-    body: "text",
+    title: "후회만 하던 껄무새가,\n전략을 알려주는 껄무새로.",
+    body: "“살걸, 팔걸” 하며 지나간 투자를 아쉬워하는\n투자자들의 표현 ‘껄무새’에서 이름을 가져왔습니다.\n\n같은 말을 반복하는 앵무새의 이미지를 유쾌하게 뒤집어,\n선글라스를 쓰고 자신만만하게 전략을 알려주는 캐릭터로 표현했습니다.",
     tokens: [
-      { label: "text", value: "text" },
-      { label: "text", value: "text" },
-      { label: "text", value: "text" },
+      { label: "껄", value: "“살걸, 팔걸”처럼 투자 뒤에 남는 아쉬움과 후회" },
+      { label: "무새", value: "같은 말을 반복하는 앵무새에서 가져온 캐릭터" },
+      { label: "선글라스", value: "능청스럽고 자신감 있게 전략을 알려주는 껄무새의 상징" },
     ],
   },
 };

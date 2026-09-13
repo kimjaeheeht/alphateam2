@@ -5,8 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-import { projects } from "@/lib/projects";
+import BrandImage from "@/components/brand/BrandImage";
 import Container from "@/components/layout/Container";
+import { projects } from "@/lib/projects";
 
 const navItems = [
   { href: "/", label: "홈" },
@@ -30,10 +31,18 @@ export default function Header() {
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
-          className="shrink-0 text-sm font-bold"
+          className="shrink-0"
           onClick={() => setOpen(false)}
+          aria-label="알파팀 2기 홈"
         >
-          알파팀 2기
+          <BrandImage
+            src="/images/logo.svg"
+            alt="알파팀 2기"
+            width={100}
+            height={24}
+            className="h-6 w-auto"
+            priority
+          />
         </Link>
         <nav aria-label="주요 메뉴" className="hidden items-center gap-8 text-sm md:flex">
           {navItems.map((item) => (
