@@ -1,3 +1,4 @@
+import HomeArchive from "@/components/home/HomeArchive";
 import HomeHero from "@/components/home/HomeHero";
 import HomeJourney from "@/components/home/HomeJourney";
 import ProjectCards from "@/components/home/ProjectCards";
@@ -9,6 +10,7 @@ export default function HomePage() {
         <HomeJourney />
       </HomeHero>
       <ProjectCards />
+      <HomeArchive />
     </>
   );
 }

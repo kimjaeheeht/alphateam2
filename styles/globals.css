@@ -6,6 +6,8 @@
   --foreground: #111111;
   --muted: #666666;
   --surface: #f0f1f3;
+  /** 홈 서비스 소개 섹션 — 상큼한 스카이 */
+  --surface-fresh: #e4f0fb;
   --accent: #111111;
   --on-accent: #ffffff;
   --secondary: #111111;
@@ -16,6 +18,7 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-surface: var(--surface);
+  --color-surface-fresh: var(--surface-fresh);
   --color-accent: var(--accent);
   --color-on-accent: var(--on-accent);
   --color-secondary: var(--secondary);
@@ -40,11 +43,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-circles {
-  --circle-shift: 34%;
+  --circle-shift: 24%;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(58vw, 26rem);
+  width: min(62vw, 36rem);
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
 }
@@ -67,23 +70,14 @@ h1, h2, h3, h4, h5, h6 {
   left: calc(-1 * var(--circle-shift));
 }
 
-.hero-circle-b {
-  z-index: 2;
-  left: 0;
-}
-
 .hero-circle-c {
   z-index: 1;
   left: var(--circle-shift);
 }
 
-/* 첫 진입: 1·3 동시 → 텍스트·2 동시, 모두 opacity 0에서 시작 */
+/* 좌·우 동시 등장 */
 .hero-circles--intro .hero-circle-a {
   animation: hero-circle-enter-l 0.8s cubic-bezier(0.2, 1, 0.25, 1) both;
-}
-
-.hero-circles--intro .hero-circle-b {
-  animation: hero-circle-enter-c 1.5s cubic-bezier(0.2, 1, 0.25, 1) 0.5s both;
 }
 
 .hero-circles--intro .hero-circle-c {
@@ -98,17 +92,6 @@ h1, h2, h3, h4, h5, h6 {
   to {
     opacity: var(--circle-opacity);
     transform: translate3d(0, 0, 0) scale(1);
-  }
-}
-
-@keyframes hero-circle-enter-c {
-  from {
-    opacity: 0;
-    transform: scale(0.78);
-  }
-  to {
-    opacity: var(--circle-opacity);
-    transform: scale(1);
   }
 }
 
@@ -138,7 +121,6 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-circles--intro .hero-circle-a,
-  .hero-circles--intro .hero-circle-b,
   .hero-circles--intro .hero-circle-c,
   .hero-lockup--intro {
     animation: none;

@@ -103,8 +103,8 @@ export default function HomeHero({ children }: HomeHeroProps) {
     Math.floor(philosophyProgress * PHILOSOPHY.items.length + 1e-6),
   );
   const circleShift = reduced
-    ? 34
-    : 34 * (1 - smoothstep(0.58, 0.92, progress));
+    ? 24
+    : 24 * (1 - smoothstep(0.58, 0.92, progress));
 
   return (
     <div ref={trackRef} className="relative">

@@ -1,7 +1,7 @@
 import type { ProjectSlug } from "@/lib/projects";
 import type { ServicePageContent } from "@/lib/service-page";
 
-/** 홈 PHILOSOPHY·진행 과정·서비스 목록 카피 */
+/** 홈 PHILOSOPHY·진행 과정·서비스·아카이브 카피 */
 export const homeContent = {
   philosophy: {
     name: "PHILOSOPHY",
@@ -52,6 +52,22 @@ export const homeContent = {
   },
   projectsName: "서비스 소개",
   projectsTitle: "세 개의 서비스를 소개합니다",
+  archive: {
+    name: "아카이브",
+    title: "알파팀의 기록을 확인해보세요",
+    items: [
+      {
+        title: "아이디어 라이브러리",
+        body: "제안된 아이디어 보기",
+        href: "https://app.notion.com/p/39bc7b7752ce80e6b655d8ca79cbea9f?source=copy_link",
+      },
+      {
+        title: "프로젝트 진행 현황",
+        body: "전체 PoC 프로젝트 보기",
+        href: "https://app.notion.com/p/39fc7b7752ce800cb154f94d82e74287?source=copy_link",
+      },
+    ],
+  },
 };
 
 /** 공통 섹션명 */

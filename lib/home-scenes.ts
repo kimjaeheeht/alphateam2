@@ -5,13 +5,13 @@ const homeHeroColors = {
   /** 하단 중앙 노란 (살짝) */
   yellow: "rgba(255, 229, 144, 0.32)",
   /** 우상단 아이보리 */
-  ivory: "#f3eee4",
-  /** 우하단 스카이 */
-  sky: "rgb(152, 250, 242)",
+  ivory: "#f8f5ef",
+  /** 우하단 라이트 라이트 퍼블 */
+  sky: "rgb(100, 119, 230)",
   /** 중앙 화이트 워시 */
-  wash: "rgba(255, 234, 211, 0.52)",
-  /** 베이스 그라데이션 스톱 (핑크 → 라벤더 → 아이보리 → 연블루 → 시안) */
-  base: ["#ffa3b8", "#eec4d8", "#ebe4d6", "#b5e4f2", "#78dcf0"] as const,
+  wash: "rgba(255, 245, 211, 0.52)",
+  /** 베이스 그라데이션 스톱 — 스카이 톤 */
+  base: ["#d4e5ff", "#c5dbfc", "#b8e4f6", "#9adcf0", "#78dcf0"] as const,
 };
 
 type HeroPalette = {
@@ -61,9 +61,9 @@ export const homeHero = {
   brand: "HAI본부 알파팀 2기",
   /** 핵심 카피 — 2행 조판, 히어로에서 가장 크게 */
   headline: "생각을 서비스로",
-  /** 원 3장(좌·중·우). color + opacities만 조절하면 됩니다. */
+  /** 원 2장(좌·우). color + opacities만 조절하면 됩니다. */
   circles: {
     color: "#ffffff",
-    opacities: [0.25, 0.3, 0.25] as [number, number, number],
+    opacities: [0.28, 0.28] as [number, number],
   },
 };

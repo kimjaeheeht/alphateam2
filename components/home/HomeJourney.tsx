@@ -20,10 +20,10 @@ export default function HomeJourney() {
             titleId="home-journey"
           />
 
-          <div className="relative mt-10 sm:mt-14">
+          <div className="relative mt-8 sm:mt-12">
             <div
               aria-hidden
-              className="pointer-events-none absolute top-[6.25rem] right-[16.666%] left-[16.666%] hidden h-px -translate-y-1/2 bg-foreground/15 sm:block"
+              className="pointer-events-none absolute top-20 right-[16.666%] left-[16.666%] hidden h-px -translate-y-1/2 bg-foreground/15 sm:block lg:top-[6.5rem]"
             />
 
             <ul className="relative flex flex-col gap-8 sm:grid sm:grid-cols-3 sm:gap-8">
@@ -39,15 +39,15 @@ export default function HomeJourney() {
                       {!isLast ? (
                         <div
                           aria-hidden
-                          className="absolute top-full left-1/2 h-8 w-px -translate-x-1/2 bg-foreground/15 sm:hidden"
+                          className="absolute top-full left-1/2 h-8 w-px -translate-x-1/2 bg-transparent sm:hidden"
                         />
                       ) : null}
                       <div
                         className={cn(
-                          "relative z-10 flex size-[5.5rem] sm:size-[10rem] lg:size-[13rem] items-center justify-center rounded-full bg-white border-2",
+                          "relative z-10 flex size-[5.5rem] sm:size-[10rem] lg:size-[13rem] items-center justify-center rounded-full bg-surface border sm:border-2",
                           isLast
                             ? "border-foreground"
-                            : "border-foreground/15",
+                            : "border-transparent",
                         )}
                       >
                         <p className="text-2xl font-bold leading-none tracking-tight text-foreground sm:text-[clamp(2.5rem,6.5vw,4.25rem)]">

@@ -85,17 +85,9 @@ export const projects: Project[] = [
   },
 ];
 
-export const heroCircleOpacities = [0.28, 0.5, 0.28] as [
-  number,
-  number,
-  number,
-];
+export const heroCircleOpacities = [0.28, 0.28] as [number, number];
 
-export const heroCircleOpacitiesOnLight = [0.38, 0.55, 0.38] as [
-  number,
-  number,
-  number,
-];
+export const heroCircleOpacitiesOnLight = [0.38, 0.38] as [number, number];
 
 /** slug로 서비스 메타를 찾습니다. */
 export function getProject(slug: ProjectSlug) {

@@ -5,26 +5,25 @@ import { cn } from "@/lib/cn";
 type HeroCirclesProps = {
   /** 원 색. 기본 흰색. */
   color?: string;
-  /** 좌·중·우 투명도(0~1). 가운데가 가장 밝게 두는 것을 권장합니다. */
-  opacities: [number, number, number];
+  /** 좌·우 투명도(0~1). */
+  opacities: [number, number];
   /** 첫 등장 시 벌어지며 나타나는 인트로. */
   animate?: boolean;
-  /** 좌우 원 간격(%). 0이면 가운데로 합쳐집니다. 기본 34. */
+  /** 좌우 원 간격(%). 0이면 가운데로 합쳐집니다. 기본 24. */
   shift?: number;
 };
 
 const circleClass = [
   "hero-circle hero-circle-a",
-  "hero-circle hero-circle-b",
   "hero-circle hero-circle-c",
 ] as const;
 
-/** 히어로·카드 배경용 원 3장. */
+/** 히어로 배경용 원 2장(좌·우). */
 export default function HeroCircles({
   color = "#ffffff",
   opacities,
   animate = false,
-  shift = 34,
+  shift = 24,
 }: HeroCirclesProps) {
   return (
     <div

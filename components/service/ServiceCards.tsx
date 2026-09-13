@@ -27,7 +27,7 @@ export default function ServiceCards({
   const lightAccent = onAccent.toLowerCase() !== "#ffffff";
 
   return (
-    <ul className={cn("mt-10 sm:mt-16 grid gap-6", columns)}>
+    <ul className={cn("mt-8 grid gap-6 sm:mt-12", columns)}>
       {items.map((item, index) => {
         const featured = accentLast && index === items.length - 1;
 
