@@ -44,7 +44,7 @@ export const projects: Project[] = [
   {
     slug: "torikong",
     name: "토리콩",
-    description: "우리 아이만의 특별한 이야기",
+    description: "아이의 영상 시간을, 부모가 이끄는 교육 시간으로",
     href: "/torikong",
     liveUrl: "https://2607-tale-nest.vercel.app/",
     accent: "#FF6087",

@@ -285,8 +285,8 @@ export const torikongContent: ServicePageContent = {
     ],
   },
   closing: {
-    title: "아이의 영상 시간을, 부모가 이끄는 교육 시간으로.",
-    body: "오늘 아이에게 알려주고 싶은 것부터 토리콩으로 시작하세요.",
+    title: "토리콩에서 직접 확인해 보세요!",
+    body: "아이의 영상 시간을, 부모가 이끄는 교육 시간으로.",
     cta: serviceCtas.primary,
   },
 };
