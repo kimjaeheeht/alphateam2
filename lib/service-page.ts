@@ -21,6 +21,19 @@ export type ServiceToken = {
   value: string;
 };
 
+export type ServiceCharacter = {
+  src: string;
+  title: string;
+  body?: string;
+};
+
+export type ServiceCharacters = {
+  name?: string;
+  title?: string;
+  body?: string;
+  items: ServiceCharacter[];
+};
+
 export type ServicePageContent = {
   hero?: {
     title?: string;
@@ -35,6 +48,8 @@ export type ServicePageContent = {
   highlight?: ServiceSection;
   brand?: ServiceSection & {
     tokens?: ServiceToken[];
+    /** 껄무새처럼 캐릭터 소개가 필요할 때만 둡니다. */
+    characters?: ServiceCharacters;
   };
   closing?: {
     title?: string;

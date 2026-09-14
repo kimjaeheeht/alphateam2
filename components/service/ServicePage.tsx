@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Logo from "@/components/brand/Logo";
 import Container from "@/components/layout/Container";
+import BrandCharacters from "@/components/service/BrandCharacters";
 import HeroScreen from "@/components/service/HeroScreen";
 import ServiceCards from "@/components/service/ServiceCards";
 import ServiceHeading from "@/components/service/ServiceHeading";
@@ -229,6 +230,14 @@ export default function ServicePage({
                   </dl>
                 ) : null}
               </div>
+            ) : null}
+            {content.brand.characters?.items.length ? (
+              <BrandCharacters
+                name={content.brand.characters.name}
+                title={content.brand.characters.title}
+                body={content.brand.characters.body}
+                items={content.brand.characters.items}
+              />
             ) : null}
           </Container>
         </section>

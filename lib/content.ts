@@ -387,6 +387,43 @@ export const ggparrotContent: ServicePageContent = {
       { label: "앵무새", value: "같은 말을 반복하는 앵무새에서 가져온 캐릭터" },
       { label: "선글라스", value: "능청스럽고 자신감 있게 전략을 알려주는 껄무새의 상징" },
     ],
+    characters: {
+      name: "캐릭터 소개",
+      title: "시장을 지켜보는 여섯 표정",
+      body: "내 매크로가 실행되는 동안, 에이전트 껄무새는 이렇게 반응합니다.",
+      items: [
+        {
+          src: "/images/ggparrot/brand/ggparrot-agent-curious-v1.svg",
+          title: "호기심",
+          body: "차트가 움직이면 먼저 들여다봅니다.",
+        },
+        {
+          src: "/images/ggparrot/brand/ggparrot-agent-focused-v1.svg",
+          title: "집중",
+          body: "조건이 맞을 때까지 눈을 떼지 않습니다.",
+        },
+        {
+          src: "/images/ggparrot/brand/ggparrot-agent-critical-v1.svg",
+          title: "비판",
+          body: "근거 없는 감은 그냥 넘기지 않습니다.",
+        },
+        {
+          src: "/images/ggparrot/brand/ggparrot-agent-signal-v1.svg",
+          title: "시그널",
+          body: "조건이 맞으면 바로 반응합니다.",
+        },
+        {
+          src: "/images/ggparrot/brand/ggparrot-agent-warning-v1.svg",
+          title: "경고",
+          body: "리스크가 커지면 큰소리로 막습니다.",
+        },
+        {
+          src: "/images/ggparrot/brand/ggparrot-agent-calm-v1.svg",
+          title: "평온",
+          body: "잘 돌아가고 있어서 여유롭습니다.",
+        },
+      ],
+    },
   },
   closing: {
     title: "껄무새에서 직접 확인해 보세요!",
