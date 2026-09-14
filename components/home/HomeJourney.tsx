@@ -3,7 +3,7 @@ import ServiceHeading from "@/components/service/ServiceHeading";
 import { cn } from "@/lib/cn";
 import { homeContent } from "@/lib/content";
 
-/** 알파랩 2기 여정 숫자. PHILOSOPHY와 서비스 사이에 둡니다. */
+/** 알파팀 2기 여정 숫자. PHILOSOPHY와 서비스 사이에 둡니다. */
 export default function HomeJourney() {
   const { journey } = homeContent;
 

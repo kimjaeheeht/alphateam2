@@ -18,17 +18,13 @@ const pretendard = localFont({
   ],
 });
 
-const siteTitle = "알파팀 2기 쇼케이스";
+const siteTitle = "알파팀 2기";
 const siteShortName = "알파팀 2기";
-const siteDescription = "알파팀 2기의 세 가지 서비스 쇼케이스";
+const siteDescription = "생각을 서비스로 — 트립디토, 토리콩, 껄무새";
+const siteUrl = "https://alphateam2.vercel.app";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ??
-      (process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : "http://localhost:3000"),
-  ),
+  metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
     template: `%s | ${siteTitle}`,

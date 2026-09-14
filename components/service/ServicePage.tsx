@@ -11,7 +11,7 @@ import { cn } from "@/lib/cn";
 import { serviceCtas } from "@/lib/content";
 import type { ServicePageProps } from "@/lib/service-page";
 
-/** 서비스 쇼케이스 공통 레이아웃. 브랜드 색과 카피만 바꿔 세 페이지가 같이 씁니다. */
+/** 서비스 페이지 공통 레이아웃. 브랜드 색과 카피만 바꿔 세 페이지가 같이 씁니다. */
 export default function ServicePage({
   project,
   content,

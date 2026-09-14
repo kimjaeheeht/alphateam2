@@ -54,7 +54,7 @@ export const homeContent = {
   projectsTitle: "세 개의 서비스를 소개합니다",
   archive: {
     name: "아카이브",
-    title: "알파팀의 기록을 확인해보세요",
+    title: "알파팀 2기의 기록을 확인해보세요",
     items: [
       {
         title: "아이디어 라이브러리",
@@ -395,7 +395,7 @@ export const ggparrotContent: ServicePageContent = {
   },
 };
 
-/** slug → 쇼케이스 카피 */
+/** slug → 서비스 카피 */
 export const serviceContent: Record<ProjectSlug, ServicePageContent> = {
   tripdito: tripditoContent,
   torikong: torikongContent,
