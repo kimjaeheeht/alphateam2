@@ -190,7 +190,7 @@ export const tripditoContent: ServicePageContent = {
 /** 토리콩 카피 */
 export const torikongContent: ServicePageContent = {
   hero: {
-    title: "우리 아이를 위한\n교육 콘텐츠,\n이제 직접 만들어요!",
+    title: "좋아하는 캐릭터로,\n지금 배우는 이야기를\n영상으로 만들어요!",
     screens: [
       "/images/torikong/visual/01.png",
       "/images/torikong/visual/02.png",
@@ -201,32 +201,77 @@ export const torikongContent: ServicePageContent = {
   },
   background: {
     name: serviceSectionNames.background,
-    title: "text",
+    title: "틀어줄 영상은 많은데,\n우리 아이에게 맞는 이야기는 없었죠?",
     items: [
-      { icon: "Share2", body: "text" },
-      { icon: "Search", body: "text" },
-      { icon: "Lightbulb", body: "text" },
+      {
+        icon: "Baby",
+        body: "유튜브 키즈를 틀어주면서도, 이 영상이 우리 아이에게 맞는 건지 확신이 안 섰던 순간",
+      },
+      {
+        icon: "RotateCcw",
+        body: "교육 앱은 목표가 분명한데, 아이가 스스로 보지 않아 결국 영상으로 돌아가던 경험",
+      },
+      {
+        icon: "Frown",
+        body: "좋아하는 캐릭터로, 지금 배우는 내용의 영상을 만들고 싶었지만 어디서부터 시작해야 할지 몰라 포기했던 기억",
+      },
     ],
   },
   service: {
     name: serviceSectionNames.service,
-    title: "text",
-    body: "text",
+    title: "캐릭터와 배울 점만 정하면,\n교육 영상이 완성돼요!",
+    body: "토리콩은 부모·교사가 캐릭터와 교육 목표만 넣으면, AI가 유아 눈높이에 맞는 이야기·그림·목소리·영상을 만들어 그 자리에서 볼 수 있게 해주는 서비스예요.",
     items: [
-      { icon: "Upload", step: "01", title: "text", body: "text" },
-      { icon: "ScanSearch", step: "02", title: "text", body: "text" },
-      { icon: "ListChecks", step: "03", title: "text", body: "text" },
-      { icon: "MapPin", step: "04", title: "text", body: "text" },
+      {
+        icon: "Smile",
+        step: "01",
+        title: "캐릭터 만들기",
+        body: "이름·외형·목소리만 정하면 이야기의 주인공이 만들어져요.",
+      },
+      {
+        icon: "BookOpen",
+        step: "02",
+        title: "배울 점 고르기",
+        body: "캐릭터와 교육 목표만 넣으면 이야기가 시작돼요.\n예: 1부터 5까지 세기, 내 마음 말하기, 차례 지키고 나누기",
+      },
+      {
+        icon: "Clapperboard",
+        step: "03",
+        title: "이야기 확인하고 만들기",
+        body: "초안을 보고 마음에 들면, 그림·목소리·영상이 완성돼요.",
+      },
+      {
+        icon: "ListChecks",
+        step: "04",
+        title: "함께 보고 복습하기",
+        body: "아이 화면에서 보고, 배운 내용을 퀴즈로 다시 만나요.",
+      },
     ],
   },
   highlight: {
     name: serviceSectionNames.highlight,
-    title: "text",
+    title: "소중한 스크린 타임,\n직접 만든 이야기로 채워보세요!",
     items: [
-      { icon: "ImageIcon", title: "text", body: "text" },
-      { icon: "ListChecks", title: "text", body: "text" },
-      { icon: "MapPin", title: "text", body: "text" },
-      { icon: "Camera", title: "text", body: "text" },
+      {
+        icon: "Users",
+        title: "같은 얼굴의 캐릭터",
+        body: "한 번 만든 캐릭터가 여러 이야기에서도 같은 얼굴로 나와요.",
+      },
+      {
+        icon: "GraduationCap",
+        title: "교육이 먼저인 이야기",
+        body: "무엇을 배울지 정하면, 장면마다 학습이 이어지는 이야기를 써요. 끝에 교훈 한 줄로 끝나지 않아요.",
+      },
+      {
+        icon: "ToyBrick",
+        title: "아이 전용 시청 화면",
+        body: "큰 버튼, 한글 나레이션과 자막으로 처음부터 끝까지 봐요. 건너뛰기는 없어요.",
+      },
+      {
+        icon: "Puzzle",
+        title: "보는 다음의 복습",
+        body: "시청이 끝나면 이야기 속 캐릭터와 함께 3문제를 풀어요. 점수는 매기지 않아요.",
+      },
     ],
   },
   brand: {
