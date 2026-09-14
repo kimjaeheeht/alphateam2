@@ -22,7 +22,6 @@ import {
   Smile,
   Sparkles,
   Store,
-  ToyBrick,
   Trophy,
   Users,
   type LucideIcon,
@@ -53,7 +52,6 @@ const icons: Record<string, LucideIcon> = {
   Smile,
   Sparkles,
   Store,
-  ToyBrick,
   Trophy,
   Users,
 };

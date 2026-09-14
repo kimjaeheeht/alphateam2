@@ -26,7 +26,7 @@ export default function ServiceHeading({
   const heading = title ? (
     <h2
       id={titleId}
-      className="whitespace-pre-line text-[clamp(1.75rem,4vw,2.75rem)] font-bold"
+      className="whitespace-pre-line text-[clamp(1.625rem,3.5vw,2.4rem)] font-bold"
     >
       {title}
     </h2>

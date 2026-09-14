@@ -81,7 +81,7 @@ export default function ServicePage({
             <div className="relative z-10 flex w-full flex-col justify-center">
               <Logo project={project} onDark={!lightAccent && !lightHero} className="h-10 sm:h-12" priority />
               {heroTitle ? (
-                <h1 className="mt-6 whitespace-pre-line text-[clamp(2rem,5vw,3.8rem)] font-bold">
+                <h1 className="mt-6 whitespace-pre-line text-[clamp(1.875rem,4.5vw,3.25rem)] font-bold">
                   {heroTitle}
                 </h1>
               ) : null}

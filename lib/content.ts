@@ -190,7 +190,7 @@ export const tripditoContent: ServicePageContent = {
 /** 토리콩 카피 */
 export const torikongContent: ServicePageContent = {
   hero: {
-    title: "좋아하는 캐릭터로,\n지금 배우는 이야기를\n영상으로 만들어요!",
+    title: "우리 아이가\n보고 배울 이야기,\n이제 직접 만들어요!",
     screens: [
       "/images/torikong/visual/01.png",
       "/images/torikong/visual/02.png",
@@ -213,14 +213,14 @@ export const torikongContent: ServicePageContent = {
       },
       {
         icon: "Frown",
-        body: "좋아하는 캐릭터로, 지금 배우는 내용의 영상을 만들고 싶었지만 어디서부터 시작해야 할지 몰라 포기했던 기억",
+        body: "아이가 좋아하는 캐릭터로 교육 영상을 직접 만들고 싶었지만, 어디서부터 시작해야 할지 몰라 포기했던 기억",
       },
     ],
   },
   service: {
     name: serviceSectionNames.service,
-    title: "캐릭터와 배울 점만 정하면,\n교육 영상이 완성돼요!",
-    body: "토리콩은 부모·교사가 캐릭터와 교육 목표만 넣으면, AI가 유아 눈높이에 맞는 이야기·그림·목소리·영상을 만들어 그 자리에서 볼 수 있게 해주는 서비스예요.",
+    title: "캐릭터와 배울 이야기만 정하면,\n영상이 완성돼요!",
+    body: "토리콩은 캐릭터와 배울 이야기만 정하면,\nAI가 그림·목소리·영상을 만들어 우리 아이에게 바로 보여 주는 서비스예요.",
     items: [
       {
         icon: "Smile",
@@ -231,26 +231,26 @@ export const torikongContent: ServicePageContent = {
       {
         icon: "BookOpen",
         step: "02",
-        title: "배울 점 고르기",
-        body: "캐릭터와 교육 목표만 넣으면 이야기가 시작돼요.\n예: 1부터 5까지 세기, 내 마음 말하기, 차례 지키고 나누기",
+        title: "배울 이야기 정하기",
+        body: "우리 아이가 배울 점만 고르면 이야기가 시작돼요. 예) 손 씻기, 숫자 세기",
       },
       {
         icon: "Clapperboard",
         step: "03",
         title: "이야기 확인하고 만들기",
-        body: "초안을 보고 마음에 들면, 그림·목소리·영상이 완성돼요.",
+        body: "이야기를 미리 보고 마음에 들면, 그림·목소리·영상이 완성돼요.",
       },
       {
         icon: "ListChecks",
         step: "04",
         title: "함께 보고 복습하기",
-        body: "아이 화면에서 보고, 배운 내용을 퀴즈로 다시 만나요.",
+        body: "우리 아이가 이야기를 보고, 퀴즈로 다시 만나요.",
       },
     ],
   },
   highlight: {
     name: serviceSectionNames.highlight,
-    title: "소중한 스크린 타임,\n직접 만든 이야기로 채워보세요!",
+    title: "우리 아이의 스크린 타임,\n직접 만든 이야기로 채워보세요!",
     items: [
       {
         icon: "Users",
@@ -260,17 +260,17 @@ export const torikongContent: ServicePageContent = {
       {
         icon: "GraduationCap",
         title: "교육이 먼저인 이야기",
-        body: "무엇을 배울지 정하면, 장면마다 학습이 이어지는 이야기를 써요. 끝에 교훈 한 줄로 끝나지 않아요.",
+        body: "우리 아이가 배울 점을 정하면, 그 내용이 장면마다 이어지는 이야기를 써요.",
       },
       {
-        icon: "ToyBrick",
+        icon: "Baby",
         title: "아이 전용 시청 화면",
-        body: "큰 버튼, 한글 나레이션과 자막으로 처음부터 끝까지 봐요. 건너뛰기는 없어요.",
+        body: "우리 아이가 큰 버튼과 한글 목소리·자막으로 처음부터 끝까지 봐요. 건너뛰기는 없어요.",
       },
       {
         icon: "Puzzle",
-        title: "보는 다음의 복습",
-        body: "시청이 끝나면 이야기 속 캐릭터와 함께 3문제를 풀어요. 점수는 매기지 않아요.",
+        title: "보고 나서 복습하기",
+        body: "이야기가 끝나면 캐릭터와 함께 퀴즈로 다시 만나요. 점수는 매기지 않아요.",
       },
     ],
   },
@@ -294,7 +294,7 @@ export const torikongContent: ServicePageContent = {
 /** 껄무새 카피 */
 export const ggparrotContent: ServicePageContent = {
   hero: {
-    title: "살껄 팔껄 하던 그 감,\n매크로로 바로 돌려보세요!",
+    title: "살껄 팔껄 하던 그 감,\n매크로로\n바로 돌려보세요!",
     screens: [
       "/images/ggparrot/visual/01.png",
       "/images/ggparrot/visual/02.png",
