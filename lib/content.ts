@@ -84,23 +84,6 @@ export const serviceCtas = {
   secondary: "서비스 소개",
 } as const;
 
-/** 홈 카드·클로징 본문 공통 문구 (projects.tagline) */
-export function getProjectPitch(project: { tagline: string }) {
-  return project.tagline;
-}
-
-/** 클로징: `{서비스명}에서 직접 확인해 보세요!` + 피치 + 공통 CTA */
-export function buildServiceClosing(project: {
-  name: string;
-  tagline: string;
-}) {
-  return {
-    title: `${project.name}에서 직접 확인해 보세요!`,
-    body: getProjectPitch(project),
-    cta: serviceCtas.primary,
-  };
-}
-
 /** 트립디토 카피 */
 export const tripditoContent: ServicePageContent = {
   hero: {
@@ -197,6 +180,11 @@ export const tripditoContent: ServicePageContent = {
       { label: "Pick", value: "좋아하는 것을 선택하고 담는 경험" },
     ],
   },
+  closing: {
+    title: "트립디토에서 직접 확인해 보세요!",
+    body: "이미지 한 장에서 시작되는 여행 쇼핑 경험",
+    cta: serviceCtas.primary,
+  },
 };
 
 /** 토리콩 카피 */
@@ -251,6 +239,11 @@ export const torikongContent: ServicePageContent = {
       { label: "반짝임", value: "AI를 통해 아이디어가 콘텐츠로 만들어지는 순간을 표현" },
     ],
   },
+  closing: {
+    title: "토리콩에서 직접 확인해 보세요!",
+    body: "우리 아이만의 특별한 이야기",
+    cta: serviceCtas.primary,
+  },
 };
 
 /** 껄무새 카피 */
@@ -267,32 +260,77 @@ export const ggparrotContent: ServicePageContent = {
   },
   background: {
     name: serviceSectionNames.background,
-    title: "text",
+    title: "매크로 매매, 들어는 봤는데\n어떻게 시작하죠?",
     items: [
-      { icon: "Share2", body: "text" },
-      { icon: "Search", body: "text" },
-      { icon: "Lightbulb", body: "text" },
+      {
+        icon: "Code",
+        body: "차트를 24시간 볼 수 없어 자동매매를 알아봤지만, 검색하면 파이썬 코드와 API 설정부터 나와 창을 닫았습니다.",
+      },
+      {
+        icon: "CircleHelp",
+        body: "볼린저밴드, RSI 같은 지표는 이름만 알고 실제로 어떤 조건일 때 사고파는 건지 감이 오지 않았습니다.",
+      },
+      {
+        icon: "Frown",
+        body: "봇을 사자니 수십만 원, 남의 전략을 쓰자니 왜 되는지 모르는 블랙박스. 결국 만들어 보기도 전에 포기했습니다.",
+      },
     ],
   },
   service: {
     name: serviceSectionNames.service,
-    title: "text",
-    body: "text",
+    title: "말만 하지 말고, 직접 돌려보세요!",
+    body: "껄무새는 코인 매매 전략을 코딩 없이 만들고, 돌려보고,\n남들과 겨루고, 사고파는 커뮤니티 전략 시장입니다.",
     items: [
-      { icon: "Upload", step: "01", title: "text", body: "text" },
-      { icon: "ScanSearch", step: "02", title: "text", body: "text" },
-      { icon: "ListChecks", step: "03", title: "text", body: "text" },
-      { icon: "MapPin", step: "04", title: "text", body: "text" },
+      {
+        icon: "SlidersHorizontal",
+        step: "01",
+        title: "조건 정하기",
+        body: "종목·지표·손익 조건을 클릭으로 고릅니다.",
+      },
+      {
+        icon: "LineChart",
+        step: "02",
+        title: "백테스트",
+        body: "과거 시세로 돌려 수익률을 숫자로 확인합니다.",
+      },
+      {
+        icon: "Trophy",
+        step: "03",
+        title: "리더보드 등록",
+        body: "모의 자금으로 실시간 겨루고 순위를 지킵니다.",
+      },
+      {
+        icon: "KeyRound",
+        step: "04",
+        title: "실제 구동",
+        body: "실행기에 바이낸스 키를 넣으면 진짜로 돌아갑니다.",
+      },
     ],
   },
   highlight: {
     name: serviceSectionNames.highlight,
-    title: "text",
+    title: "감을 숫자로 바꾸는 순간을\n하나씩 만들었습니다!",
     items: [
-      { icon: "ImageIcon", title: "text", body: "text" },
-      { icon: "ListChecks", title: "text", body: "text" },
-      { icon: "MapPin", title: "text", body: "text" },
-      { icon: "Camera", title: "text", body: "text" },
+      {
+        icon: "SlidersHorizontal",
+        title: "매크로 빌더",
+        body: "지표 설명과 실시간 차트를 보며 규칙을 고릅니다.",
+      },
+      {
+        icon: "MessageCircle",
+        title: "AI 해설",
+        body: "백테스트 결과를 껄무새 말투로 쉽게 풀어 줍니다.",
+      },
+      {
+        icon: "Store",
+        title: "리더보드 / 마켓",
+        body: "매일 겨루고, 검증된 전략은 포인트로 사고팝니다.",
+      },
+      {
+        icon: "Bot",
+        title: "실행기 / 에이전트",
+        body: "실행기가 주문을 내고, 에이전트가 24시간 지켜봅니다.",
+      },
     ],
   },
   brand: {
@@ -304,6 +342,11 @@ export const ggparrotContent: ServicePageContent = {
       { label: "앵무새", value: "같은 말을 반복하는 앵무새에서 가져온 캐릭터" },
       { label: "선글라스", value: "능청스럽고 자신감 있게 전략을 알려주는 껄무새의 상징" },
     ],
+  },
+  closing: {
+    title: "껄무새에서 직접 확인해 보세요!",
+    body: "코린이도 쉽게 시작하는 코인 전략 플랫폼",
+    cta: serviceCtas.primary,
   },
 };
 

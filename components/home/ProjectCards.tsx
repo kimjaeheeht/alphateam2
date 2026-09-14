@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 import BrandImage from "@/components/brand/BrandImage";
 import Container from "@/components/layout/Container";
 import ServiceHeading from "@/components/service/ServiceHeading";
-import { getProjectPitch, homeContent } from "@/lib/content";
+import { homeContent } from "@/lib/content";
 import { projects } from "@/lib/projects";
 
 export default function ProjectCards() {
@@ -34,7 +34,7 @@ export default function ProjectCards() {
                   />
                 </div>
                 <p className="text-sm leading-relaxed text-muted sm:text-base">
-                  {getProjectPitch(project)}
+                  {project.description}
                 </p>
                 <span className="inline-flex items-center gap-0.5 text-sm font-medium text-foreground">
                   자세히 보기

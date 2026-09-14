@@ -13,11 +13,9 @@ export type BrandAssets = {
 export type Project = {
   slug: ProjectSlug;
   name: string;
-  nameEn: string;
-  tagline: string;
+  description: string;
   href: `/${ProjectSlug}`;
   liveUrl: string;
-  category: string;
   accent: string;
   secondary: string;
   onAccent: string;
@@ -30,11 +28,9 @@ export const projects: Project[] = [
   {
     slug: "tripdito",
     name: "트립디토",
-    nameEn: "TripDito",
-    tagline: "이미지 한 장에서 시작되는 여행 쇼핑",
+    description: "이미지 한 장에서 시작되는 여행 쇼핑",
     href: "/tripdito",
     liveUrl: "https://trip-shopping.vercel.app/",
-    category: "여행 쇼핑",
     accent: "#3182F6",
     secondary: "#62CBFF",
     onAccent: "#ffffff",
@@ -48,11 +44,9 @@ export const projects: Project[] = [
   {
     slug: "torikong",
     name: "토리콩",
-    nameEn: "Torikong",
-    tagline: "우리 아이만의 특별한 이야기",
+    description: "우리 아이만의 특별한 이야기",
     href: "/torikong",
     liveUrl: "https://2607-tale-nest.vercel.app/",
-    category: "에듀테크",
     accent: "#FF6087",
     secondary: "#FFBEC7",
     onAccent: "#ffffff",
@@ -66,11 +60,9 @@ export const projects: Project[] = [
   {
     slug: "ggparrot",
     name: "껄무새",
-    nameEn: "GGPARROT",
-    tagline: "코린이도 쉽게 시작하는 코인 매매 전략",
+    description: "코린이도 쉽게 시작하는 코인 전략 플랫폼",
     href: "/ggparrot",
     liveUrl: "https://gg-parrot.vercel.app/",
-    category: "핀테크 교육",
     accent: "#FCD535",
     secondary: "#FFE57C",
     onAccent: "#111111",
@@ -81,10 +73,6 @@ export const projects: Project[] = [
     },
   },
 ];
-
-export const heroCircleOpacities = [0.28, 0.28] as [number, number];
-
-export const heroCircleOpacitiesOnLight = [0.38, 0.38] as [number, number];
 
 /** slug로 서비스 메타를 찾습니다. */
 export function getProject(slug: ProjectSlug) {

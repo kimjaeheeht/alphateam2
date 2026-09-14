@@ -33,9 +33,9 @@ export default function ServiceHeading({
   ) : null;
 
   return (
-    <div className={cn(align === "center" && "mx-auto max-w-3xl text-center")}>
+    <div className={cn(align === "center" && "text-center")}>
       {name ? (
-        <p className="text-sm font-medium text-current/50">{name}</p>
+        <p className="text-sm font-medium text-current/60">{name}</p>
       ) : null}
       {aside && heading ? (
         <div
@@ -53,12 +53,7 @@ export default function ServiceHeading({
         aside
       ) : null}
       {body ? (
-        <p
-          className={cn(
-            "mt-5 whitespace-pre-line text-[15px] text-current/70",
-            align === "center" && "mx-auto max-w-2xl",
-          )}
-        >
+        <p className="mt-5 whitespace-pre-line text-[15px] text-current/70">
           {body}
         </p>
       ) : null}

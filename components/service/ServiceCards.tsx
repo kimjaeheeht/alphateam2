@@ -81,12 +81,12 @@ export default function ServiceCards({
             {item.title || item.body ? (
               <div className="flex flex-col gap-2">
                 {item.title ? (
-                  <h3 className="text-lg font-medium">{item.title}</h3>
+                  <h3 className="whitespace-pre-line text-lg font-medium">{item.title}</h3>
                 ) : null}
                 {item.body ? (
                   <p
                     className={cn(
-                      "text-sm",
+                      "whitespace-pre-line text-sm",
                       featured
                         ? lightAccent
                           ? "text-foreground/70"

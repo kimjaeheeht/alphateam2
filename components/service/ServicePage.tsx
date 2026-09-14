@@ -8,7 +8,7 @@ import ServiceCards from "@/components/service/ServiceCards";
 import ServiceHeading from "@/components/service/ServiceHeading";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
-import { buildServiceClosing, getProjectPitch } from "@/lib/content";
+import { serviceCtas } from "@/lib/content";
 import type { ServicePageProps } from "@/lib/service-page";
 
 /** 서비스 쇼케이스 공통 레이아웃. 브랜드 색과 카피만 바꿔 세 페이지가 같이 씁니다. */
@@ -38,9 +38,9 @@ export default function ServicePage({
           ? (["bg-accent/5", "bg-accent/[0.08]"] as const)
           : (["bg-white/5", "bg-white/10"] as const);
   const hasHeroCta = Boolean(hero?.cta || hero?.ctaSecondary);
-  const closing = buildServiceClosing(project);
-  /** 히어로 제목 미입력 시 홈 배너·클로징과 같은 피치 문구 사용 */
-  const heroTitle = hero?.title ?? getProjectPitch(project);
+  const closing = content.closing;
+  /** 히어로 제목 미입력 시 홈 카드와 같은 설명 사용 */
+  const heroTitle = hero?.title ?? project.description;
 
   return (
     <>
@@ -234,27 +234,35 @@ export default function ServicePage({
         </section>
       ) : null}
 
-      {/* 섹션 - 바로가기 (서비스명·태그라인으로 자동 생성) */}
-      <section className="bg-surface py-20 text-center sm:py-28">
-        <Container>
-          <p className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold">
-            {closing.title}
-          </p>
-          <p className="mt-4 text-sm text-muted sm:text-base">{closing.body}</p>
-          <Button
-            href={project.liveUrl}
-            variant={lightAccent ? "solid" : "solid-accent"}
-            external
-            className="mt-8"
-          >
-            {closing.cta}
-            <MoveUpRight className="size-4" aria-hidden="true" />
-          </Button>
-        </Container>
-      </section>
+      {/* 섹션 - 바로가기 */}
+      {closing?.title || closing?.body || closing?.cta ? (
+        <section className="bg-surface py-20 text-center sm:py-28">
+          <Container>
+            {closing.title ? (
+              <p className="whitespace-pre-line text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold">
+                {closing.title}
+              </p>
+            ) : null}
+            {closing.body ? (
+              <p className="mt-4 whitespace-pre-line text-sm text-muted sm:text-base">
+                {closing.body}
+              </p>
+            ) : null}
+            <Button
+              href={project.liveUrl}
+              variant={lightAccent ? "solid" : "solid-accent"}
+              external
+              className="mt-8"
+            >
+              {closing.cta ?? serviceCtas.primary}
+              <MoveUpRight className="size-4" aria-hidden="true" />
+            </Button>
+          </Container>
+        </section>
+      ) : null}
 
-      {/* 섹션 - 다른 서비스 */}
-      <nav aria-label="다른 서비스">
+      {/* 섹션 - 다른 서비스 네비게이션 */}
+      <nav aria-label="다른 서비스 네비게이션">
         <Container className="flex min-h-24 items-center justify-between gap-6 py-6">
           {prev ? (
             <Link href={prev.href} className="inline-flex items-center gap-2 text-lg hover:text-accent">
