@@ -23,7 +23,7 @@ export default function HomeJourney() {
           <div className="relative mt-8 sm:mt-12">
             <div
               aria-hidden
-              className="pointer-events-none absolute top-20 right-[16.666%] left-[16.666%] hidden h-px -translate-y-1/2 bg-foreground/15 sm:block lg:top-[6.5rem]"
+              className="pointer-events-none absolute top-16 right-[16.666%] left-[16.666%] hidden h-px -translate-y-1/2 bg-foreground/15 sm:block lg:top-20"
             />
 
             <ul className="relative flex flex-col gap-4 sm:grid sm:grid-cols-3 sm:gap-8">
@@ -44,13 +44,13 @@ export default function HomeJourney() {
                       ) : null}
                       <div
                         className={cn(
-                          "relative z-10 flex size-[5.5rem] sm:size-[10rem] lg:size-[13rem] items-center justify-center rounded-full bg-surface-fresh border sm:border-2",
+                          "relative z-10 flex size-20 items-center justify-center rounded-full border bg-surface-fresh sm:size-32 sm:border-2 lg:size-40",
                           isLast
                             ? "border-foreground"
                             : "border-transparent",
                         )}
                       >
-                        <p className="text-2xl font-bold leading-none tracking-tight text-foreground sm:text-[clamp(2.5rem,6.5vw,4.25rem)]">
+                        <p className="text-xl font-bold leading-none tracking-tight text-foreground sm:text-4xl lg:text-5xl">
                           {item.value}
                         </p>
                       </div>
