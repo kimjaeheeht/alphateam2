@@ -31,6 +31,11 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   applicationName: siteShortName,
+  verification: {
+    other: {
+      "naver-site-verification": "2384104c26410848d751be35908169fbcddc0372",
+    },
+  },
   manifest: "/favicon/site.webmanifest",
   icons: {
     icon: [
