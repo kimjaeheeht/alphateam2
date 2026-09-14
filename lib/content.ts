@@ -100,15 +100,15 @@ export const tripditoContent: ServicePageContent = {
     title: "캡처만 해두고,\n정작 여행지에서는 찾지 못한 경험!",
     items: [
       {
-        icon: "Share2",
+        icon: "Luggage",
         body: "SNS에서 캡처해 두고 막상 여행지에서는 까먹고 돌아와서 캐리어를 풀면 생각났던 순간",
       },
       {
-        icon: "Search",
-        body: "바쁜 현생 속에서 쇼핑리스트를 만드는 일이 번거롭다고 느낀 경험",
+        icon: "ClipboardList",
+        body: "바쁜 현생 속에서 쇼핑 리스트를 만드는 일이 번거롭다고 느낀 경험",
       },
       {
-        icon: "Lightbulb",
+        icon: "Frown",
         body: "미리 캡처한 이미지를 가져갔지만 정작 어디서 파는지 몰라 아까운 여행 시간만 낭비했던 기억",
       },
     ],
@@ -119,7 +119,7 @@ export const tripditoContent: ServicePageContent = {
     body: "트립디토는 이미지 한 장이면 내 여행지에 맞춰 AI가 정보를 찾고,\n쇼핑 리스트로 만들어, 현지 구매까지 이어주는 서비스에요.",
     items: [
       {
-        icon: "Upload",
+        icon: "ImageIcon",
         step: "01",
         title: "이미지 업로드",
         body: "사고 싶은 상품의 캡처 이미지를 업로드하세요.",
@@ -149,7 +149,7 @@ export const tripditoContent: ServicePageContent = {
     title: "소중한 여행, 알차게 즐기세요!\n번거로운 과정은 트립디토가 줄였어요.",
     items: [
       {
-        icon: "ImageIcon",
+        icon: "Sparkles",
         title: "AI 이미지 분석",
         body: "상품명을 몰라도 이미지 한 장으로 디토 AI가 정보를 찾고",
       },
@@ -164,7 +164,7 @@ export const tripditoContent: ServicePageContent = {
         body: "아직 사지 않은 상품을 파는 가까운 상점을 지도에 표시해줘요.",
       },
       {
-        icon: "Camera",
+        icon: "Heart",
         title: "때샷 피드·랭킹",
         body: "우리만의 쇼핑 트랜드 공유! 다른 사람의 쇼핑 리스트를 내 리스트에도 담기",
       },
@@ -249,7 +249,7 @@ export const torikongContent: ServicePageContent = {
 /** 껄무새 카피 */
 export const ggparrotContent: ServicePageContent = {
   hero: {
-    title: "살껄 팔껄 후회 끝!\n만들고 겨루는\n 코인 전략 플랫폼",
+    title: "살껄 팔껄 하던 그 감,\n매크로로 바로 돌려보세요!",
     screens: [
       "/images/ggparrot/visual/01.png",
       "/images/ggparrot/visual/02.png",
@@ -260,15 +260,15 @@ export const ggparrotContent: ServicePageContent = {
   },
   background: {
     name: serviceSectionNames.background,
-    title: "매크로 매매, 들어는 봤는데\n어떻게 시작하죠?",
+    title: "코인 투자 요즘은 다들 AI, 매크로를 사용한다는데,\n어떻게 시작할지 막막했죠?",
     items: [
       {
         icon: "Code",
         body: "차트를 24시간 볼 수 없어 자동매매를 알아봤지만, 검색하면 파이썬 코드와 API 설정부터 나와 창을 닫았습니다.",
       },
       {
-        icon: "CircleHelp",
-        body: "볼린저밴드, RSI 같은 지표는 이름만 알고 실제로 어떤 조건일 때 사고파는 건지 감이 오지 않았습니다.",
+        icon: "BookOpen",
+        body: "직접 만들어보려고 해도 어디서부터 공부해야 될지 막막했습니다.",
       },
       {
         icon: "Frown",
