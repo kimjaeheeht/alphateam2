@@ -190,7 +190,7 @@ export const tripditoContent: ServicePageContent = {
 /** 토리콩 카피 */
 export const torikongContent: ServicePageContent = {
   hero: {
-    title: "우리 아이가\n보고 배울 이야기,\n이제 직접 만들어요!",
+    title: "미안했던 영상 시간,\n이제는 내가\n이끄는 교육 시간.",
     screens: [
       "/images/torikong/visual/01.png",
       "/images/torikong/visual/02.png",
@@ -201,76 +201,76 @@ export const torikongContent: ServicePageContent = {
   },
   background: {
     name: serviceSectionNames.background,
-    title: "틀어줄 영상은 많은데,\n우리 아이에게 맞는 이야기는 없었죠?",
+    title: "영상을 보여줄 수밖에 없지만,\n마음은 편하지 않으니까요.",
     items: [
       {
-        icon: "Baby",
-        body: "유튜브 키즈를 틀어주면서도, 이 영상이 우리 아이에게 맞는 건지 확신이 안 섰던 순간",
-      },
-      {
-        icon: "RotateCcw",
-        body: "교육 앱은 목표가 분명한데, 아이가 스스로 보지 않아 결국 영상으로 돌아가던 경험",
+        icon: "PlayCircle",
+        body: "식사 준비부터 이동 시간까지, 아이에게 영상을 보여줄 수밖에 없는 순간이 있습니다.",
       },
       {
         icon: "Frown",
-        body: "아이가 좋아하는 캐릭터로 교육 영상을 직접 만들고 싶었지만, 어디서부터 시작해야 할지 몰라 포기했던 기억",
+        body: "아이는 즐거워하지만, 부모는 '계속 보여줘도 괜찮을까?' 하는 죄책감을 느낍니다.",
+      },
+      {
+        icon: "Lightbulb",
+        body: "이왕 보는 영상이라면, 내가 가르치고 싶은 내용을 배우는 시간이 되길 바랍니다.",
       },
     ],
   },
   service: {
     name: serviceSectionNames.service,
-    title: "캐릭터와 배울 이야기만 정하면,\n영상이 완성돼요!",
-    body: "토리콩은 캐릭터와 배울 이야기만 정하면,\nAI가 그림·목소리·영상을 만들어 우리 아이에게 바로 보여 주는 서비스예요.",
+    title: "가르칠 내용은 부모가,\n영상 제작은 AI가.",
+    body: "내 아이에게 필요한 이야기를 쉽게 만들고, 영상 시청을 퀴즈 학습으로 이어갑니다.",
     items: [
       {
-        icon: "Smile",
-        step: "01",
-        title: "캐릭터 만들기",
-        body: "이름·외형·목소리만 정하면 이야기의 주인공이 만들어져요.",
-      },
-      {
         icon: "BookOpen",
-        step: "02",
-        title: "배울 이야기 정하기",
-        body: "우리 아이가 배울 점만 고르면 이야기가 시작돼요. 예) 손 씻기, 숫자 세기",
+        step: "01",
+        title: "교육 주제 선택",
+        body: "손 씻기, 숫자 세기, 영어처럼 아이에게 알려주고 싶은 내용을 정합니다.",
       },
       {
         icon: "Clapperboard",
-        step: "03",
-        title: "이야기 확인하고 만들기",
-        body: "이야기를 미리 보고 마음에 들면, 그림·목소리·영상이 완성돼요.",
+        step: "02",
+        title: "AI 영상 제작",
+        body: "캐릭터와 교육 주제를 바탕으로 AI가 애니메이션을 만듭니다.",
       },
       {
-        icon: "ListChecks",
+        icon: "Baby",
+        step: "03",
+        title: "아이와 함께 시청",
+        body: "부모가 정한 교육 내용을 아이가 이야기 속에서 만납니다.",
+      },
+      {
+        icon: "Puzzle",
         step: "04",
-        title: "함께 보고 복습하기",
-        body: "우리 아이가 이야기를 보고, 퀴즈로 다시 만나요.",
+        title: "퀴즈로 복습",
+        body: "영상을 본 뒤 퀴즈를 풀며 배운 내용을 되짚어 봅니다.",
       },
     ],
   },
   highlight: {
     name: serviceSectionNames.highlight,
-    title: "우리 아이의 스크린 타임,\n직접 만든 이야기로 채워보세요!",
+    title: "내 아이에게 필요한 배움,\n다른 아이들에게도.",
     items: [
       {
-        icon: "Users",
-        title: "같은 얼굴의 캐릭터",
-        body: "한 번 만든 캐릭터가 여러 이야기에서도 같은 얼굴로 나와요.",
+        icon: "Sparkles",
+        title: "누구나 쉽게 만드는 영상",
+        body: "전문 제작 기술 없이도 교육 아이디어를 애니메이션으로 만들 수 있습니다.",
       },
       {
         icon: "GraduationCap",
-        title: "교육이 먼저인 이야기",
-        body: "우리 아이가 배울 점을 정하면, 그 내용이 장면마다 이어지는 이야기를 써요.",
+        title: "생활 습관부터 영어까지",
+        body: "손 씻기나 숫자 세기 같은 짧은 교육부터 영어 학습까지 담을 수 있습니다.",
       },
       {
-        icon: "Baby",
-        title: "아이 전용 시청 화면",
-        body: "우리 아이가 큰 버튼과 한글 목소리·자막으로 처음부터 끝까지 봐요. 건너뛰기는 없어요.",
+        icon: "ListChecks",
+        title: "시청에서 퀴즈 학습으로",
+        body: "영상 속에서 배운 내용을 퀴즈로 다시 생각하며 학습을 이어갑니다.",
       },
       {
-        icon: "Puzzle",
-        title: "보고 나서 복습하기",
-        body: "이야기가 끝나면 캐릭터와 함께 퀴즈로 다시 만나요. 점수는 매기지 않아요.",
+        icon: "Users",
+        title: "다른 아이들과 함께 보는 콘텐츠",
+        body: "내 아이를 위해 만든 영상을 공유하면 다른 아이들도 보고 배울 수 있습니다.",
       },
     ],
   },
@@ -285,8 +285,8 @@ export const torikongContent: ServicePageContent = {
     ],
   },
   closing: {
-    title: "토리콩에서 직접 확인해 보세요!",
-    body: "우리 아이만의 특별한 이야기",
+    title: "아이의 영상 시간을, 부모가 이끄는 교육 시간으로.",
+    body: "오늘 아이에게 알려주고 싶은 것부터 토리콩으로 시작하세요.",
     cta: serviceCtas.primary,
   },
 };
