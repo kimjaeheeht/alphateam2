@@ -86,7 +86,7 @@ export default function ServiceCards({
                 {item.body ? (
                   <p
                     className={cn(
-                      "whitespace-pre-line text-sm",
+                      "text-sm [overflow-wrap:anywhere]",
                       featured
                         ? lightAccent
                           ? "text-foreground/70"
@@ -94,7 +94,11 @@ export default function ServiceCards({
                         : "text-muted",
                     )}
                   >
-                    {item.body}
+                    {item.body.split("\n").map((line, lineIndex) => (
+                      <span key={`${line}-${lineIndex}`} className="block">
+                        {line}
+                      </span>
+                    ))}
                   </p>
                 ) : null}
               </div>

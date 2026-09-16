@@ -190,7 +190,7 @@ export const tripditoContent: ServicePageContent = {
 /** 토리콩 카피 */
 export const torikongContent: ServicePageContent = {
   hero: {
-    title: "미안했던 영상 시간,\n이제는 내가\n이끄는 교육 시간.",
+    title: "미안했던 영상 시간,\n이제는 내가\n이끄는 교육 시간",
     screens: [
       "/images/torikong/visual/01.png",
       "/images/torikong/visual/02.png",
@@ -220,7 +220,7 @@ export const torikongContent: ServicePageContent = {
   service: {
     name: serviceSectionNames.service,
     title: "가르칠 내용은 부모가,\n영상 제작은 AI가.",
-    body: "내 아이에게 필요한 이야기를 쉽게 만들고, 영상 시청을 퀴즈 학습으로 이어갑니다.",
+    body: "내 아이에게 필요한 이야기를 쉽게 만들고,\n영상 시청을 퀴즈 학습으로 이어갑니다.",
     items: [
       {
         icon: "BookOpen",
@@ -250,27 +250,27 @@ export const torikongContent: ServicePageContent = {
   },
   highlight: {
     name: serviceSectionNames.highlight,
-    title: "내 아이에게 필요한 배움,\n다른 아이들에게도.",
+    title: "아이가 만들고, 배우고, 나누는\n우리 아이만의 이야기.",
     items: [
       {
         icon: "Sparkles",
-        title: "누구나 쉽게 만드는 영상",
-        body: "전문 제작 기술 없이도 교육 아이디어를 애니메이션으로 만들 수 있습니다.",
+        title: "아이가 직접 만드는 캐릭터",
+        body: "아이와 함께 세상에 하나뿐인 캐릭터를 만들어 보세요.\n아이가 만든 캐릭터가 영상 속 주인공이 되어 이야기를 이끌어 갑니다.",
       },
       {
         icon: "GraduationCap",
         title: "생활 습관부터 영어까지",
-        body: "손 씻기나 숫자 세기 같은 짧은 교육부터 영어 학습까지 담을 수 있습니다.",
+        body: "손 씻기나 숫자 세기 같은 짧은 교육부터 교재에 맞춘 영어 학습까지 담을 수 있습니다.\n우리 아이에게 맞는 커리큘럼을 직접 구성해 보세요.",
       },
       {
         icon: "ListChecks",
-        title: "시청에서 퀴즈 학습으로",
-        body: "영상 속에서 배운 내용을 퀴즈로 다시 생각하며 학습을 이어갑니다.",
+        title: "시청 후 퀴즈로 복습",
+        body: "영상을 본 뒤 퀴즈를 풀며 배운 내용을 다시 떠올립니다.\n아이가 어디까지 이해했는지 한눈에 확인할 수 있습니다.",
       },
       {
         icon: "Users",
-        title: "다른 아이들과 함께 보는 콘텐츠",
-        body: "내 아이를 위해 만든 영상을 공유하면 다른 아이들도 보고 배울 수 있습니다.",
+        title: "친구들과 함께 보는 애니메이션",
+        body: "완성한 영상은 다른 아이들과 함께 볼 수 있습니다.\n내 캐릭터를 보는 친구가 많아질수록, 아이는 다음 이야기를 더 만들고싶어 합니다.",
       },
     ],
   },
